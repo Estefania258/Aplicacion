@@ -1,8 +1,5 @@
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
-import leer from './imagenes/logoLeer.jpg';
-import pensar from './imagenes/logoPensar.jpg';
-import responder from './imagenes/logoEscibir.jpg'
 
 const Bienvenida = () => {
   const { anio, materia } = useParams();
@@ -31,15 +28,15 @@ const Bienvenida = () => {
           <h4 className="titulo-instrucciones">¡Prepárate para jugar y aprender!</h4>
           <div className="lista-instrucciones">
             <div className="instruccion">
-              <img src={leer} alt="Niño leendo" className="icono" />
+              <img src="/image/logoLeer.png" alt="Niño leyendo" className="icono" />
               <p>Escucha o lee las preguntas con atención.</p>
             </div>
             <div className="instruccion">
-            <img src={pensar} alt="Niño pensando" className="icono" />
+              <img src="/image/logoPensar.jpg" alt="Niño pensando" className="icono" />
               <p>Piensa en la respuesta correcta.</p>
             </div>
             <div className="instruccion">
-            <img src={responder} alt="Niño respondiendo" className="icono" />
+              <img src="/image/logoEscibir.jpg" alt="Niño respondiendo" className="icono" />
               <p>Responde lo mejor que puedas. ¡Tú puedes!</p>
             </div>
           </div>

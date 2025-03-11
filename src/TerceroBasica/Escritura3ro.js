@@ -1,12 +1,7 @@
 import React, { useRef, useState } from "react";
 import { jsPDF } from 'jspdf';
 import "jspdf-autotable";
-import LogoUDIPSAI from "../imagenes/logoUDIPSAI.jpg";
 import { useLocation, useNavigate } from 'react-router-dom';
-import logoLibro from '../imagenes/logoLibro.gif';
-import amigo1 from '../imagenes/logoBurro.jpg';
-import amigo2 from '../imagenes/logoChivo.jpg';
-import amigo3 from '../imagenes/logoMno.jpg';
 import './Escritura3ro.css';
 
 const MiCard = ({ children, className }) => {
@@ -34,7 +29,7 @@ const MiBotonFinalizar = ({ onClick }) => {
     <button
       onClick={onClick}
       className="finalizar3ro-btn"
-      
+
       style={{ marginBottom: "10px" }} // Agrega margen inferior para separar los botones
     >
       Finalizar
@@ -67,14 +62,14 @@ const Escritura3ro = () => {
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.width;
-    const pageHeight = doc.internal.pageSize.height; 
+    const pageHeight = doc.internal.pageSize.height;
     let yPos = 10;
 
     // Agregar logo de UDIPSAI
     const logoWidth = 50;
     const logoHeight = 15;
     const logoX = (pageWidth - logoWidth) / 2; // Calcula posición X para centrar
-    doc.addImage(LogoUDIPSAI, "PNG", logoX, yPos, logoWidth, logoHeight);
+    doc.addImage("/image/logoUDIPSAI.jpg", "PNG", logoX, yPos, logoWidth, logoHeight);
     yPos += logoHeight + 5;
 
     // Título del PDF
@@ -127,15 +122,15 @@ const Escritura3ro = () => {
     const ahora = new Date();
     const fecha = ahora.toLocaleDateString();
     const hora = ahora.toLocaleTimeString();
-    
+
     doc.setFontSize(10);
     // Posicionar a 2 cm del final de la página
     const footerY = pageHeight - 20;
-    
+
     doc.text(`Fecha de descarga: ${fecha}`, pageWidth - 10, footerY, {
       align: "right"
     });
-    
+
     doc.text(`Hora: ${hora}`, pageWidth - 10, footerY + 5, {
       align: "right"
     });
@@ -143,41 +138,41 @@ const Escritura3ro = () => {
     doc.save(`Evaluacion_Escritura_3ro_${nombre}_${apellido}.pdf`);
   };
 
-    // Manejo de los cambios en los campos de texto
-    const handleTextoChange = (e) => {
-      setEvaluacionTexto(e.target.value);
-    };
-  
-    const handleErroresChange = (e) => {
-      setErrores({ ...errores, [e.target.name]: e.target.value });
-    };
-  
-    // Manejo de la selección de caligrafía y ortografía
-    const handleCaligrafiaChange = (e) => {
-      setCaligrafia(e.target.value);
-    };
-  
-    const handleOrtografiaChange = (e) => {
-      setOrtografia(e.target.value);
-    };
+  // Manejo de los cambios en los campos de texto
+  const handleTextoChange = (e) => {
+    setEvaluacionTexto(e.target.value);
+  };
+
+  const handleErroresChange = (e) => {
+    setErrores({ ...errores, [e.target.name]: e.target.value });
+  };
+
+  // Manejo de la selección de caligrafía y ortografía
+  const handleCaligrafiaChange = (e) => {
+    setCaligrafia(e.target.value);
+  };
+
+  const handleOrtografiaChange = (e) => {
+    setOrtografia(e.target.value);
+  };
   const handleFinalized = () => {
     navigate('/materias/3ro');
   };
 
   return (
     <div className="escritura-page p-6 space-y-6">
-       <h1 className="titulo-principal-T" style={{ textAlign: "center", fontSize: "2.5em", marginBottom: "20px" }}>
-          PRUEBA DE ESCRITURA 3ro
-        </h1>
+      <h1 className="titulo-principal-T" style={{ textAlign: "center", fontSize: "2.5em", marginBottom: "20px" }}>
+        PRUEBA DE ESCRITURA 3ro
+      </h1>
       <div ref={pdfRef} className="space-y-6">
         {/* Bloque de Lectura */}
         <MiCard className="lectura-card">
           <h1 className="escritura-title text-2xl font-bold text-center">LOS TRES AMIGOS</h1>
-           {/* Contenedor de imágenes centrado */}
-           <div className="imagenes-container-l3">
-            <img src={amigo1} alt="Burro" className="imagen-amigo" />
-            <img src={amigo2} alt="Chivo" className="imagen-amigo" />
-            <img src={amigo3} alt="Mono" className="imagen-amigo" />
+          {/* Contenedor de imágenes centrado */}
+          <div className="imagenes-container-l3">
+            <img src='/image/logoBurro.jpg' alt="Burro" className="imagen-amigo" />
+            <img src='/image/logoChivo.jpg' alt="Chivo" className="imagen-amigo" />
+            <img src='/image/logoMno.jpg' alt="Mono" className="imagen-amigo" />
           </div>
           <p className="escritura-description text-lg">
             Una vez en un lugar muy lejano, vivían tres animalitos que eran inseparables: un mono, un chivo y un burro.
@@ -191,10 +186,10 @@ const Escritura3ro = () => {
         {/* Bloque de Evaluación */}
         <MiCard className="evaluacion-card">
           <h2 className="escritura-subtitle text-xl font-bold text-center">Evaluación de Escritura</h2>
-          <img src={logoLibro} alt="Simulación de escritura" className="imagen-escritura" />
+          <img src='/image/logoLibro.gif' alt="Simulación de escritura" className="imagen-escritura" />
 
           <div className="evaluacion-opciones">
-          <h3>Caligrafía:</h3>
+            <h3>Caligrafía:</h3>
             <label>
               <input type="radio" name="caligrafia" value="Muy buena" onChange={handleCaligrafiaChange} /> Muy buena
             </label>
@@ -242,7 +237,7 @@ const Escritura3ro = () => {
           <div className="errores-escritura">
             {Object.keys(errores).map((key) => (
               <label key={key}>
-                {key.charAt(0).toUpperCase() + key.slice(1)}: 
+                {key.charAt(0).toUpperCase() + key.slice(1)}:
                 <input
                   type="text"
                   name={key}
@@ -261,7 +256,7 @@ const Escritura3ro = () => {
       </div>
 
       <MiBotonImprimir onClick={handleDownloadPDF} />
-      <MiBotonFinalizar onClick={handleFinalized}/>
+      <MiBotonFinalizar onClick={handleFinalized} />
     </div>
   );
 };

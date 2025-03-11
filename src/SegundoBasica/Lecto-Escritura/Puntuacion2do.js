@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import logoUdipsai from "../../imagenes/logoUDIPSAI.jpg";
 
 const compararRespuestas = (respuestas, respuestasCorrectas) => {
   // Verifica que ambos objetos no sean null o undefined antes de proceder
@@ -10,7 +9,7 @@ const compararRespuestas = (respuestas, respuestasCorrectas) => {
 
   const clavesRespuestas = Object.keys(respuestas).sort();
   const clavesRespuestasCorrectas = Object.keys(respuestasCorrectas).sort();
-  
+
   // Si las claves no coinciden, la respuesta es incorrecta
   if (clavesRespuestas.length !== clavesRespuestasCorrectas.length) {
     return false;
@@ -43,8 +42,8 @@ const calcularPuntaje = (respuestas, respuestasCorrectas) => {
   let puntaje = 0;
 
   // Pregunta 1
-  if (JSON.stringify(respuestas.pregunta1) === 
-     JSON.stringify(respuestasCorrectas.pregunta1)) {
+  if (JSON.stringify(respuestas.pregunta1) ===
+    JSON.stringify(respuestasCorrectas.pregunta1)) {
     puntaje += 2;
   }
 
@@ -74,8 +73,8 @@ const calcularPuntaje = (respuestas, respuestasCorrectas) => {
   }
 
   // Pregunta 4 - Validar orden exacto
-  if (Array.isArray(respuestas.pregunta4) && 
-      respuestas.pregunta4.join(" ") === "Iván vende muchas verduras .") {
+  if (Array.isArray(respuestas.pregunta4) &&
+    respuestas.pregunta4.join(" ") === "Iván vende muchas verduras .") {
     puntaje += 2;
   }
 
@@ -84,7 +83,7 @@ const calcularPuntaje = (respuestas, respuestasCorrectas) => {
 
   if (respuestas.pregunta5) {
     console.log("Respuestas recibidas para P5:", respuestas.pregunta5);
-    
+
     Object.entries(respuestasCorrectas.pregunta5).forEach(([key, correctValue]) => {
       if (respuestas.pregunta5[key] === correctValue) {
         puntajeP5 += 1;
@@ -94,10 +93,10 @@ const calcularPuntaje = (respuestas, respuestasCorrectas) => {
       }
     });
   }
-  
+
   // Escalar la puntuación a 2 puntos
   puntaje += (puntajeP5 * 2) / 3;
-  
+
 
   return puntaje;
 };
@@ -108,7 +107,7 @@ const Puntuacion2do = ({ respuestas, nombreEstudiante, materia, onFinalizar }) =
   const navigate = useNavigate();
   const location = useLocation();
   const { nombre, apellido } = location.state || {}; // Obtener el nombre y apellido desde las props
- 
+
   const handleFinalized = () => {
     navigate('/materias/2do'); // Redirige al usuario a la página de materias
   };
@@ -143,34 +142,34 @@ const Puntuacion2do = ({ respuestas, nombreEstudiante, materia, onFinalizar }) =
       const imgWidth = 210; // Ancho de la página A4 en mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width; // Calcula la altura proporcional
 
-     
+
       pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, imgWidth, imgHeight);
-     
+
       pdf.setFontSize(10);
       pdf.text(`Fecha de descarga: ${new Date().toLocaleDateString()}`, 10, imgHeight + 10);
       pdf.text(`Hora de descarga: ${new Date().toLocaleTimeString()}`, 10, imgHeight + 15);
 
       // Guardar el PDF
-    pdf.save(`Evaluacion_Lectura y Escritura 2do_${nombre}_${apellido}.pdf`);
+      pdf.save(`Evaluacion_Lectura y Escritura 2do_${nombre}_${apellido}.pdf`);
     });
   };
 
   return (
     <div style={styles.contenedor}>
-        
-        {/* Título principal */}
-        <h1>Evaluación Finalizada</h1>
 
-        {/* Resumen de la evaluación */}
-        <div id="resumen-evaluacion" style={styles.resumen}>
-           {/* Logo de UDIPSAI */}
+      {/* Título principal */}
+      <h1>Evaluación Finalizada</h1>
+
+      {/* Resumen de la evaluación */}
+      <div id="resumen-evaluacion" style={styles.resumen}>
+        {/* Logo de UDIPSAI */}
         <div style={styles.logoContainer}>
-          <img src={logoUdipsai} alt="Logo UDIPSAI" style={styles.logo} />
+          <img src="/image/logoUDIPSAI.jpg" alt="Logo UDIPSAI" style={styles.logo} />
         </div>
         <h3>Resumen de la Evaluación</h3>
         <p>Estudiante: {`${nombre} ${apellido}`}</p>
         <p>Calificación: {puntajeTotal.toFixed(1)}/10</p>
-        
+
         {/* Pregunta 1 */}
         <div style={styles.respuestaItem}>
           <p style={styles.pregunta}>Pregunta 1</p>
@@ -185,20 +184,18 @@ const Puntuacion2do = ({ respuestas, nombreEstudiante, materia, onFinalizar }) =
           <p style={styles.pregunta}>Pregunta 2</p>
           <p style={styles.respuesta}>
             Oración 1:{" "}
-            {`${respuestas.pregunta2?.["pregunta2-0-0"] || ""} ${
-              respuestas.pregunta2?.["pregunta2-0-1"]|| ""
-            }` === "nada mañana"
-            ? "Respuesta correcta"
-            : "Respuesta incorrecta"}
+            {`${respuestas.pregunta2?.["pregunta2-0-0"] || ""} ${respuestas.pregunta2?.["pregunta2-0-1"] || ""
+              }` === "nada mañana"
+              ? "Respuesta correcta"
+              : "Respuesta incorrecta"}
           </p>
           <p style={styles.respuesta}>
             Oración correcta: Diana nada en la mañana.
           </p>
           <p style={styles.respuesta}>
             Oración 2:{" "}
-            {`${respuestas.pregunta2?.["pregunta2-1-0"] || ""} ${
-              respuestas.pregunta2?.["pregunta2-1-1"] || ""
-            }` === "mono dado"
+            {`${respuestas.pregunta2?.["pregunta2-1-0"] || ""} ${respuestas.pregunta2?.["pregunta2-1-1"] || ""
+              }` === "mono dado"
               ? "Respuesta correcta"
               : "Respuesta incorrecta"}
           </p>
@@ -230,7 +227,7 @@ const Puntuacion2do = ({ respuestas, nombreEstudiante, materia, onFinalizar }) =
           </p>
           <p style={styles.respuesta}>
             {JSON.stringify(respuestas.pregunta4) ===
-            JSON.stringify(respuestasCorrectas.pregunta4)
+              JSON.stringify(respuestasCorrectas.pregunta4)
               ? "Respuesta correcta"
               : "Respuesta incorrecta"}
           </p>
@@ -323,8 +320,8 @@ const styles = {
     width: "300px", // Ancho del logo
     height: "auto" // Altura automática para mantener la proporción
   }
-  
-  
+
+
 };
 
 export default Puntuacion2do;

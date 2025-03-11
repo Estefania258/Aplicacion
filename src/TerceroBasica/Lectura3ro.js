@@ -1,9 +1,7 @@
-import { useState} from "react"
-import { useLocation,useNavigate } from "react-router-dom"
-import ImgPesca from "../imagenes/logoPescar.png"
+import { useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import jsPDF from "jspdf"
 import "jspdf-autotable"
-import LogoUDIPSAI from "../imagenes/logoUDIPSAI.jpg"
 import "./Lectura3ro.css"
 
 const Lectura3ro = () => {
@@ -85,7 +83,7 @@ const Lectura3ro = () => {
     let yPos = 10
 
     // Add UDIPSAI logo
-    pdf.addImage(LogoUDIPSAI, "PNG", 10, yPos, 50, 15)
+    pdf.addImage("/image/logoUDIPSAI.jpg", "PNG", 10, yPos, 50, 15)
     yPos += 20
 
     // Add title
@@ -264,7 +262,7 @@ const Lectura3ro = () => {
             <>
               {paginaActual === 0 ? (
                 <div className="lectura-pesca-texto">
-                  <img src={ImgPesca || "/placeholder.svg"} alt="Pesca" className="lectura-pesca-imagen" />
+                  <img src="/image/logoPescar.png" alt="Pesca" className="lectura-pesca-imagen" />
                   <p style={{ fontSize: "1.5em" }}>{lectura1}</p>
                   <button
                     className="lectura-pesca-boton animado"
@@ -550,12 +548,12 @@ const Lectura3ro = () => {
                     📄 Descargar PDF
                   </button>
                   <button
-                  onClick={handleFinalized}
-                  className="lectura-pesca-boton animado"
-                  style={{ fontSize: "1.5em", marginLeft: "20px", marginRight: "20px" }} // Espacio de 20px a los lados
-                >
-                  🏁 Finalizado
-                </button>
+                    onClick={handleFinalized}
+                    className="lectura-pesca-boton animado"
+                    style={{ fontSize: "1.5em", marginLeft: "20px", marginRight: "20px" }} // Espacio de 20px a los lados
+                  >
+                    🏁 Finalizado
+                  </button>
                 </div>
               )}
             </>

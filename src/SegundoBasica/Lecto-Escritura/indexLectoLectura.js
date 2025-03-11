@@ -8,8 +8,8 @@ import P5LectoEscritura2 from "./P5LectoEscritura2";
 import Puntuacion2do from "./Puntuacion2do";
 import "./Preguntas.css";
 
-  
-  const LectoEscritura = ({ materia, nombreEstudiante }) => {
+
+const LectoEscritura = ({ materia, nombreEstudiante }) => {
   const [preguntaActual, setPreguntaActual] = useState(0);
   const [respuestas, setRespuestas] = useState({});
   const [evaluacionFinalizada, setEvaluacionFinalizada] = useState(false);
@@ -32,17 +32,17 @@ import "./Preguntas.css";
   };
 
   return evaluacionFinalizada ? (
-    
 
-    <Puntuacion2do 
+
+    <Puntuacion2do
       respuestas={respuestas}
       nombreEstudiante={nombreEstudiante}
       materia={materia}
       onFinalizar={() => navigate('/materias')}
     />
-    
+
   ) : (
-    
+
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>Evaluación de Lecto-Escritura</h1>
       <h2>{materia}</h2>
@@ -56,21 +56,21 @@ import "./Preguntas.css";
       </div>
 
       <div style={{ marginTop: "20px" }}>
-        <button 
-          onClick={() => setPreguntaActual(preguntaActual - 1)} 
+        <button
+          onClick={() => setPreguntaActual(preguntaActual - 1)}
           disabled={preguntaActual === 0}
         >
           Anterior
         </button>
-        <button 
-          onClick={irSiguiente} 
+        <button
+          onClick={irSiguiente}
           disabled={preguntaActual === 4 && evaluacionFinalizada}
         >
           {preguntaActual === 4 ? "Finalizar" : "Siguiente"}
         </button>
       </div>
     </div>
-  
+
 
   );
 };

@@ -1,13 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { jsPlumb } from "jsplumb";
 
-import ImgPie from "../../imagenes/logoPie.png";
-import ImgMano from "../../imagenes/logoMano.png";
-import ImgDedo from "../../imagenes/logoDedo.png";
-import ImgAnillo from "../../imagenes/logoAnillo.png";
-import ImgZapato from "../../imagenes/logoZapato.png";
-import ImgGuante from "../../imagenes/logoGuante.png";
-
 const correctPairs = {
   img1: "img5", // Pie - Zapato
   img2: "img6", // Mano - Guante
@@ -23,18 +16,18 @@ const P3Matematicas2 = ({ nextQuestion }) => {
 
   const leftImages = useMemo(
     () => [
-      { id: "img1", label: "", src: ImgPie },
-      { id: "img2", label: "", src: ImgMano },
-      { id: "img3", label: "", src: ImgDedo },
+      { id: "img1", label: "", src: "/image/logoPie.png" },
+      { id: "img2", label: "", src: "/image/logoMano.png" },
+      { id: "img3", label: "", src: "/image/logoDedo.png" },
     ],
     []
   );
 
   const rightImages = useMemo(
     () => [
-      { id: "img4", label: "", src: ImgAnillo },
-      { id: "img5", label: "", src: ImgZapato },
-      { id: "img6", label: "", src: ImgGuante },
+      { id: "img4", label: "", src: "/image/logoAnillo.png" },
+      { id: "img5", label: "", src: "/image/logoZapato.png" },
+      { id: "img6", label: "", src: "/image/logoGuante.png" },
     ],
     []
   );
@@ -72,7 +65,7 @@ const P3Matematicas2 = ({ nextQuestion }) => {
   const checkAnswers = () => {
     let responses = [];
     let correctConnections = 0; // Contador para las conexiones correctas
-  
+
     if (connections.length > 0) {
       connections.forEach(({ sourceId, targetId }) => {
         const connectionCorrect = correctPairs[sourceId] === targetId;
@@ -82,14 +75,14 @@ const P3Matematicas2 = ({ nextQuestion }) => {
         responses.push({ source: sourceId, target: targetId, correct: connectionCorrect });
       });
     }
-  
+
     // Si todas las conexiones son correctas, el puntaje es 1
     const totalScore = correctConnections === 3 ? 1.00 : (correctConnections * 0.33).toFixed(2);
-  
-    const mensajeFinal = totalScore === 1.00 
+
+    const mensajeFinal = totalScore === 1.00
       ? `Pregunta 3: CORRECTO! Puntaje: ${totalScore} / 1`
       : `Pregunta 3: INCORRECTO. Respuesta correcta: Pie - Zapato, Mano - Guante, Dedo - Anillo.`;
-  
+
     // Guardamos el resultado en el localStorage
     localStorage.setItem(
       "puntuacionp_P3",
@@ -100,13 +93,13 @@ const P3Matematicas2 = ({ nextQuestion }) => {
         mensajeResultado: mensajeFinal
       })
     );
-  
+
     // Mostramos el mensaje final
     setMensaje(mensajeFinal);
-  
+
     // Pasamos el resultado a la siguiente pregunta
     nextQuestion(parseFloat(totalScore), responses);
-}
+  }
 
   return (
     <div ref={containerRef} style={{ position: "relative", width: "50%", margin: "0 auto" }}>

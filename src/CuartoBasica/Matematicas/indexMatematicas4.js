@@ -1,7 +1,6 @@
 // Componente Matematicas2do
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import fondo from '../../imagenes/logoM3.png';
 import P1Matematicas4 from './P1Matematicas4';
 import P2Matematicas4 from './P2Matematicas4';
 import P3Matematicas4 from './P3Matematicas4';
@@ -54,10 +53,10 @@ const Matematicas4to = () => {
     <P9Matematicas4 nextQuestion={nextQuestion} />,
     <P10Matematicas4 nextQuestion={nextQuestion} />,
     <P11Matematicas4 nextQuestion={nextQuestion} />,
-    <Puntuacion 
-      restartQuiz={restartQuiz} 
-      puntuacion={puntuacionTotal} 
-      totalPreguntas={totalPreguntas} 
+    <Puntuacion
+      restartQuiz={restartQuiz}
+      puntuacion={puntuacionTotal}
+      totalPreguntas={totalPreguntas}
     />,
   ];
 
@@ -65,7 +64,6 @@ const Matematicas4to = () => {
     <div
       className="container"
       style={{
-        backgroundImage: `url(${fondo})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

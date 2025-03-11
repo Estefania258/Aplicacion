@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react"
-import ImgNido from "../../imagenes/logoNido.jpeg"
-import ImgPato from "../../imagenes/logoPato.png"
-import ImgHuevo from "../../imagenes/logoHuevoR.png"
 
 const P7Matematicas2 = ({ nextQuestion }) => {
   const [order, setOrder] = useState([null, null, null])
   const [draggedNumber, setDraggedNumber] = useState(null)
   const [shuffledImages, setShuffledImages] = useState([])
-  const [resultado, setResultado] = useState(null) // Estado para guardar el resultado
+  const [resultado, setResultado] = useState(null)
 
   const correctOrder = {
-    [ImgNido]: 1,
-    [ImgHuevo]: 2,
-    [ImgPato]: 3,
+    ["/image/logoNido.jpeg"]: 1,
+    ["/image/logoHuevoR.png"]: 2,
+    ["/image/logoPato.png"]: 3,
   }
 
   useEffect(() => {
-    const images = [ImgNido, ImgHuevo, ImgPato]
+    const images = ["/image/logoNido.jpeg", "/image/logoHuevoR.png", "/image/logoPato.png"]
     setShuffledImages(images.sort(() => Math.random() - 0.5))
   }, [])
 
@@ -40,14 +37,14 @@ const P7Matematicas2 = ({ nextQuestion }) => {
     // Verificar si el orden es correcto
     const isCorrect = order.every((num, index) => num === correctOrder[shuffledImages[index]]);
     const totalScore = isCorrect ? 1 : 0;
-  
+
     // Generar las respuestas
     const respuestaUsuario = order.filter((num) => num !== null).join("-") || "No ingresó ninguna respuesta";
     const respuestaCorrecta = Object.values(correctOrder).join("-");
-  
+
     // Crear el mensaje de resultado
     const mensajeResultado = `Pregunta 7: ${isCorrect ? "¡CORRECTO!" : "INCORRECTO"} \nPuntuación: ${totalScore} / 1`;
-  
+
     // Guardar el resultado en localStorage
     const resultado = {
       correcta: isCorrect,
@@ -56,14 +53,14 @@ const P7Matematicas2 = ({ nextQuestion }) => {
       puntuacion: totalScore,
       mensajeResultado: mensajeResultado,
     };
-  
+
     localStorage.setItem("puntuacionp_P7", JSON.stringify(resultado));
-  
+
     // Llamar a la función nextQuestion con la puntuación obtenida
     nextQuestion(totalScore);
   };
-  
-  
+
+
 
   return (
     <div
@@ -101,7 +98,7 @@ const P7Matematicas2 = ({ nextQuestion }) => {
               backgroundColor: "#FFFBEA",
             }}
           >
-            <img src={img || "/placeholder.svg"} alt={`Evento ${index}`} style={{ width: "120px", height: "120px" }} />
+            <img src={img} alt={`Evento ${index}`} style={{ width: "120px", height: "120px" }} />
             {order[index] !== null && (
               <div
                 style={{

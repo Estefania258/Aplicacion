@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import fondo from '../../imagenes/logoM3.png';
 import P1Matematicas2 from './P1Matematicas2';
 import P2Matematicas2 from './P2Matematicas2';
 import P3Matematicas2 from './P3Matematicas2';
@@ -52,35 +51,34 @@ const Matematicas2do = () => {
     <P9Matematicas2 nextQuestion={nextQuestion} />,
     <P10Matematicas2 nextQuestion={nextQuestion} />,
     <P11Matematicas2 nextQuestion={nextQuestion} />,
-    <Puntuacion 
-    restartQuiz={restartQuiz} 
-    puntuacion={puntuacionTotal} 
-    totalPreguntas={totalPreguntas} 
-  />,
-];
+    <Puntuacion
+      restartQuiz={restartQuiz}
+      puntuacion={puntuacionTotal}
+      totalPreguntas={totalPreguntas}
+    />,
+  ];
 
-return (
-  <div
-    className="container"
-    style={{
-      backgroundImage: `url(${fondo})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-    }}
-  >
-    <h1 ref={titleRef} className="animated-title">Prueba de Matemáticas</h1>
+  return (
+    <div
+      className="container"
+      style={{
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <h1 ref={titleRef} className="animated-title">Prueba de Matemáticas</h1>
 
-    {/* Renderiza la pregunta actual */}
-    {preguntas[currentQuestion - 1]}
+      {/* Renderiza la pregunta actual */}
+      {preguntas[currentQuestion - 1]}
 
-    <style jsx>{`
+      <style jsx>{`
       .animated-title {
         font-size: 3.5em;
         font-family: 'Fredoka One', sans-serif;
@@ -91,8 +89,8 @@ return (
         background: rgba(255, 255, 255, 0.7);
       }
     `}</style>
-  </div>
-);
+    </div>
+  );
 };
 
 export default Matematicas2do;

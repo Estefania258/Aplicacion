@@ -1,9 +1,7 @@
 import { useState } from "react"
-import { useLocation, useNavigate} from "react-router-dom"
-import ImgHornero from '../imagenes/logoHornero.jpg';
+import { useLocation, useNavigate } from "react-router-dom"
 import jsPDF from "jspdf"
 import "jspdf-autotable"
-import LogoUDIPSAI from "../imagenes/logoUDIPSAI.jpg"
 import './Lectura4to.css';
 
 const Lectura4to = () => {
@@ -52,7 +50,7 @@ const Lectura4to = () => {
     let yPos = 10
 
     // Add UDIPSAI logo
-    pdf.addImage(LogoUDIPSAI, "PNG", 10, yPos, 50, 15)
+    pdf.addImage("/image/logoUDIPSAI.jpg", "PNG", 10, yPos, 50, 15)
     yPos += 20
 
     // Add title
@@ -217,36 +215,36 @@ const Lectura4to = () => {
   };
 
   return (
-    
+
     <div className="Hornero">
       <div>
         <h1 className="titulo-principal" style={{ textAlign: "center", fontSize: "2.5em", marginBottom: "20px" }}>
           PRUEBA DE LECTURA 4to
         </h1>
-    <div className="lectura-hornero-container">
-      <h2 className="lectura-hornero-titulo" style={{ fontSize: '2em' }}>🦜 EL PÁJARO HORNERO</h2>
-      {!finalizado ? (
-        <>
-          {paginaActual === 0 ? (
-            <div className="lectura-hornero-texto">
-              <img src={ImgHornero} alt="Pájaro Hornero" className="lectura-hornero-imagen" />
-              <p style={{ fontSize: '1.5em' }}>{lecturaTexto}</p>
-              <button className="lectura-hornero-boton animado" onClick={siguientePagina} style={{ fontSize: '1.5em' }}>
-                📖 ¡Comenzar evaluación!
-              </button>
-            </div>
-          ) : paginaActual === 1 ? (
-            <div className="lectura-hornero-tablas">
-              <h3 style={{ fontSize: '1.8em' }}>FLUIDEZ DE LA LECTURA</h3>
-              <table className="tabla-grande-hornero">
-                <thead>
-                  <tr>
-                    <th>Dificultad</th>
-                    <th>Descripción</th>
-                    <th>¿Presente? (Sí/No)</th>
-                  </tr>
-                </thead>
-                <tbody>
+        <div className="lectura-hornero-container">
+          <h2 className="lectura-hornero-titulo" style={{ fontSize: '2em' }}>🦜 EL PÁJARO HORNERO</h2>
+          {!finalizado ? (
+            <>
+              {paginaActual === 0 ? (
+                <div className="lectura-hornero-texto">
+                  <img src='/image/logoHornero.jpg' alt="Pájaro Hornero" className="lectura-hornero-imagen" />
+                  <p style={{ fontSize: '1.5em' }}>{lecturaTexto}</p>
+                  <button className="lectura-hornero-boton animado" onClick={siguientePagina} style={{ fontSize: '1.5em' }}>
+                    📖 ¡Comenzar evaluación!
+                  </button>
+                </div>
+              ) : paginaActual === 1 ? (
+                <div className="lectura-hornero-tablas">
+                  <h3 style={{ fontSize: '1.8em' }}>FLUIDEZ DE LA LECTURA</h3>
+                  <table className="tabla-grande-hornero">
+                    <thead>
+                      <tr>
+                        <th>Dificultad</th>
+                        <th>Descripción</th>
+                        <th>¿Presente? (Sí/No)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                       {[
                         { tipo: "Taquilexia", desc: "Lectura muy rápida" },
                         { tipo: "Bradilexia", desc: "Lectura muy lenta" },
@@ -285,47 +283,47 @@ const Lectura4to = () => {
                         </td>
                       </tr>
                     </tbody>
-              </table>
-              <br />
-              <table className="tabla-pequeña-hornero">
-                <thead>
-                  <tr>
-                    <th>Cantidad de Dificultades</th>
-                    <th>Apreciación</th>
-                    <th>Seleccionar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>0</td>
-                    <td>Muy Buena</td>
-                    <td><input type="radio" name="apreciacion" value="Muy Buena" onChange={() => manejarApreciacion('Muy Buena')} /></td>
-                  </tr>
-                  <tr>
-                    <td>1-5</td>
-                    <td>Buena</td>
-                    <td><input type="radio" name="apreciacion" value="Buena" onChange={() => manejarApreciacion('Buena')} /></td>
-                  </tr>
-                  <tr>
-                    <td>6-9</td>
-                    <td>Regular</td>
-                    <td><input type="radio" name="apreciacion" value="Regular" onChange={() => manejarApreciacion('Regular')} /></td>
-                  </tr>
-                  <tr>
-                    <td>10-13</td>
-                    <td>Mala</td>
-                    <td><input type="radio" name="apreciacion" value="Mala" onChange={() => manejarApreciacion('Mala')} /></td>
-                  </tr>
-                </tbody>
-              </table>
-              <button 
-                className="lectura-hornero-boton animado" 
-                onClick={siguientePagina} 
-                style={{ fontSize: '1.5em' }}
-              >
-                ➡️ Pasar a las preguntas
-              </button>
-              <button
+                  </table>
+                  <br />
+                  <table className="tabla-pequeña-hornero">
+                    <thead>
+                      <tr>
+                        <th>Cantidad de Dificultades</th>
+                        <th>Apreciación</th>
+                        <th>Seleccionar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>Muy Buena</td>
+                        <td><input type="radio" name="apreciacion" value="Muy Buena" onChange={() => manejarApreciacion('Muy Buena')} /></td>
+                      </tr>
+                      <tr>
+                        <td>1-5</td>
+                        <td>Buena</td>
+                        <td><input type="radio" name="apreciacion" value="Buena" onChange={() => manejarApreciacion('Buena')} /></td>
+                      </tr>
+                      <tr>
+                        <td>6-9</td>
+                        <td>Regular</td>
+                        <td><input type="radio" name="apreciacion" value="Regular" onChange={() => manejarApreciacion('Regular')} /></td>
+                      </tr>
+                      <tr>
+                        <td>10-13</td>
+                        <td>Mala</td>
+                        <td><input type="radio" name="apreciacion" value="Mala" onChange={() => manejarApreciacion('Mala')} /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button
+                    className="lectura-hornero-boton animado"
+                    onClick={siguientePagina}
+                    style={{ fontSize: '1.5em' }}
+                  >
+                    ➡️ Pasar a las preguntas
+                  </button>
+                  <button
                     className="btn-regresar-hornero"
                     onClick={anteriorPagina}
                     style={{
@@ -339,49 +337,49 @@ const Lectura4to = () => {
                   >
                     ⬅️
                   </button>
-            </div>
-          ) : paginaActual > 1 && paginaActual <= preguntas.length + 1 ? (
-            <div className="lectura-hornero-pregunta">
-              <h3 style={{ fontSize: '1.8em' }}>📝 Pregunta {paginaActual - 1}</h3>
-              <p style={{ fontSize: '1.5em' }}>{preguntas[paginaActual - 2].pregunta}</p>
-              {preguntas[paginaActual - 2].opciones.map((opcion) => (
-                <button 
-                  key={opcion}
-                  className="lectura-hornero-opcion"
-                  onClick={() => manejarRespuesta(preguntas[paginaActual - 2], opcion)}
-                  style={{ fontSize: '1.5em' }}
-                >
-                  {opcion}
-                </button>
-              ))}
-              <button className="lectura-hornero-boton animado" onClick={siguientePagina} style={{ fontSize: '1.5em' }}>
-                ➡️ Siguiente
-              </button>
-              <button className="btn-regresar-hornero" onClick={anteriorPagina} style={{ background: '#4caf50', color: 'white', borderRadius: '50%', padding: '10px 15px', marginLeft: '10px', fontSize: '1.2em' }}>⬅️</button>
-            </div>
-          ) : (
-            <div className="lectura-hornero-finalizado">
-              <h3 style={{ fontSize: '1.8em' }}>🎉 ¡Evaluación finalizada!</h3>
-              <h4 style={{ fontSize: '1.5em' }}>🔍 Resumen de tus respuestas:</h4>
-              <ul>
-                {preguntas.map((pregunta) => (
-                  <li key={pregunta.id} style={{ fontSize: '1.5em' }}>
-                    <strong>{pregunta.pregunta}</strong>
-                    <br />
-                    <span>💬 Tu respuesta: {respuestas[pregunta.id] || "❓ No respondida"}</span>
-                  </li>
-                ))}
-              </ul>
-              <h3>Apreciación final:</h3>
-              <table className="tabla-pequeña-preguntas-hornero">
-                <thead>
-                  <tr>
-                    <th>Instaladores de Lectura Comprensiva</th>
-                    <th>Apreciación</th>
-                    <th>Seleccionar</th>
-                  </tr>
-                </thead>
-                <tbody>
+                </div>
+              ) : paginaActual > 1 && paginaActual <= preguntas.length + 1 ? (
+                <div className="lectura-hornero-pregunta">
+                  <h3 style={{ fontSize: '1.8em' }}>📝 Pregunta {paginaActual - 1}</h3>
+                  <p style={{ fontSize: '1.5em' }}>{preguntas[paginaActual - 2].pregunta}</p>
+                  {preguntas[paginaActual - 2].opciones.map((opcion) => (
+                    <button
+                      key={opcion}
+                      className="lectura-hornero-opcion"
+                      onClick={() => manejarRespuesta(preguntas[paginaActual - 2], opcion)}
+                      style={{ fontSize: '1.5em' }}
+                    >
+                      {opcion}
+                    </button>
+                  ))}
+                  <button className="lectura-hornero-boton animado" onClick={siguientePagina} style={{ fontSize: '1.5em' }}>
+                    ➡️ Siguiente
+                  </button>
+                  <button className="btn-regresar-hornero" onClick={anteriorPagina} style={{ background: '#4caf50', color: 'white', borderRadius: '50%', padding: '10px 15px', marginLeft: '10px', fontSize: '1.2em' }}>⬅️</button>
+                </div>
+              ) : (
+                <div className="lectura-hornero-finalizado">
+                  <h3 style={{ fontSize: '1.8em' }}>🎉 ¡Evaluación finalizada!</h3>
+                  <h4 style={{ fontSize: '1.5em' }}>🔍 Resumen de tus respuestas:</h4>
+                  <ul>
+                    {preguntas.map((pregunta) => (
+                      <li key={pregunta.id} style={{ fontSize: '1.5em' }}>
+                        <strong>{pregunta.pregunta}</strong>
+                        <br />
+                        <span>💬 Tu respuesta: {respuestas[pregunta.id] || "❓ No respondida"}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <h3>Apreciación final:</h3>
+                  <table className="tabla-pequeña-preguntas-hornero">
+                    <thead>
+                      <tr>
+                        <th>Instaladores de Lectura Comprensiva</th>
+                        <th>Apreciación</th>
+                        <th>Seleccionar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                       <tr>
                         <td>No responde ninguna pregunta correctamente.</td>
                         <td>Mala</td>
@@ -440,19 +438,19 @@ const Lectura4to = () => {
                     📄 Descargar PDF
                   </button>
                   <button
-                  onClick={handleFinalized}
-                  className="lectura-hornero-boton animado"
-                  style={{ fontSize: "1.5em", marginLeft: "20px", marginRight: "20px" }} // Espacio de 20px a los lados
-                >
-                  🏁 Finalizado
-                </button>
-            </div>
+                    onClick={handleFinalized}
+                    className="lectura-hornero-boton animado"
+                    style={{ fontSize: "1.5em", marginLeft: "20px", marginRight: "20px" }} // Espacio de 20px a los lados
+                  >
+                    🏁 Finalizado
+                  </button>
+                </div>
+              )}
+            </>
+          ) : null(
+            <></>
           )}
-        </>
-      ) : null(
-        <></>
-      )}
-       </div>
+        </div>
       </div>
     </div>
 

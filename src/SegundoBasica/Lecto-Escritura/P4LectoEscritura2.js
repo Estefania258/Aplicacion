@@ -1,5 +1,4 @@
 import { useState, useMemo, useCallback } from "react"
-import imgVerduras from "../../imagenes/logoVerduras.png"
 import "./Preguntas.css"
 
 const oracionOpciones = ["Iván", "vende", "muchas", "verduras", "."] // Declarar fuera del componente
@@ -31,9 +30,9 @@ const P4LectoEscritura2 = ({ onAnswer }) => {
             draggedItem: null,
           }
           onAnswer("pregunta4", Object.values(newRespuestas).filter(Boolean));
-      return newRespuestas;
-    }
-    return prev;
+          return newRespuestas;
+        }
+        return prev;
       })
     },
     [onAnswer],
@@ -49,7 +48,7 @@ const P4LectoEscritura2 = ({ onAnswer }) => {
       </h3>
 
       <div className="imagen-container">
-        <img src={imgVerduras || "/placeholder.svg"} alt="Logo de Verduras" className="imagen-guia-verdura" />
+        <img src={'/image/logoVerduras.png'} alt="Logo de Verduras" className="imagen-guia-verdura" />
       </div>
 
       <div className="oracion-container-kids">

@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
-import  {jsPlumb}  from "jsplumb";
-import imgOveja from "../../imagenes/logoOveja.jpg";
-import imgBebidas from "../../imagenes/logoBebidas.jpg";
-import imgPavo from "../../imagenes/logoPavo.jpg";
+import { jsPlumb } from "jsplumb";
 import "./Preguntas.css";
 
 const P5LectoEscritura2 = ({ onAnswer }) => {
@@ -20,9 +17,9 @@ const P5LectoEscritura2 = ({ onAnswer }) => {
 
   // Lista de imágenes
   const rightItems = useMemo(() => [
-    { id: "imgOveja", src: imgOveja },
-    { id: "imgBebidas", src: imgBebidas },
-    { id: "imgPavo", src: imgPavo },
+    { id: "imgOveja", src: '/image/logoOveja.jpg' },
+    { id: "imgBebidas", src: "/image/logoBebidas.jpg" },
+    { id: "imgPavo", src: "/image/logoPavo.jpg" },
   ], []);
 
   useEffect(() => {
@@ -55,37 +52,37 @@ const P5LectoEscritura2 = ({ onAnswer }) => {
     // Manejar las conexiones
     instance.bind("connection", (info) => {
       const { sourceId, targetId } = info.connection;
-      
+
 
       setRespuestas((prev) => {
         const nuevasRespuestas = { ...prev, [sourceId]: targetId };
-      
+
         if (typeof onAnswer === "function") {
           onAnswer("pregunta5", nuevasRespuestas);
         }
-      
+
         return nuevasRespuestas;
       });
-      
+
       setDisabledItems((prev) => [...prev, sourceId, targetId]);
 
-    //  Repaint después de 50ms para asegurar persistencia visual
+      //  Repaint después de 50ms para asegurar persistencia visual
+      setTimeout(() => {
+        instance.repaintEverything();
+      }, 50);
+    });
+
+    // Repaint después de montar la vista
     setTimeout(() => {
       instance.repaintEverything();
-    }, 50);
-  });
-
-  // Repaint después de montar la vista
-  setTimeout(() => {
-    instance.repaintEverything();
-  }, 100);
+    }, 100);
 
     return () => {
       instance.reset();
       instance.unbind("connection");
-  }; 
+    };
 
-}, [leftItems, rightItems, onAnswer]);
+  }, [leftItems, rightItems, onAnswer]);
 
   const clearLines = () => {
     instanceRef.current.deleteEveryConnection();
@@ -98,15 +95,15 @@ const P5LectoEscritura2 = ({ onAnswer }) => {
     }, 50);
   };
 
-  
-//  Repaint al cambiar disabledItems
-useEffect(() => {
-  if (instanceRef.current) {
-    setTimeout(() => {
-      instanceRef.current.repaintEverything();
-    }, 50);
-  }
-}, [disabledItems]);
+
+  //  Repaint al cambiar disabledItems
+  useEffect(() => {
+    if (instanceRef.current) {
+      setTimeout(() => {
+        instanceRef.current.repaintEverything();
+      }, 50);
+    }
+  }, [disabledItems]);
 
   return (
     <div ref={containerRef} className="p5-container">

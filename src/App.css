@@ -1,54 +1,76 @@
 /* Estilo general de la aplicación */
 .App {
-  background-image: url('./imagenes/logoHongo.jpg');
-  background-size: cover;/* La imagen de fondo cubre toda la pantalla */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat;/* Evita la repetición de la imagen */
+  background-image: url('../public/image/logoHongo.jpg');
+  background-size: cover;
+  /* La imagen de fondo cubre toda la pantalla */
+  background-position: center;
+  /* Centra la imagen de fondo */
+  background-repeat: no-repeat;
+  /* Evita la repetición de la imagen */
   text-align: center;
-  min-height: 100vh; /* Altura mínima de la aplicación */
+  min-height: 100vh;
+  /* Altura mínima de la aplicación */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed; /* Mantiene la página fija */
-  top: 0; /* Establece que quede en la parte superior */
-  left: 0; /* Establece que quede en la parte izquierda */
-  width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
-  overflow: hidden; /* Evita el desplazamiento si el contenido es mayor que la pantalla */
-} 
+  position: fixed;
+  /* Mantiene la página fija */
+  top: 0;
+  /* Establece que quede en la parte superior */
+  left: 0;
+  /* Establece que quede en la parte izquierda */
+  width: 100vw;
+  /* Asegura que ocupe todo el ancho de la pantalla */
+  overflow: hidden;
+  /* Evita el desplazamiento si el contenido es mayor que la pantalla */
+}
 
 /* Cuadro que contiene el título */
 .titulo-cuadrado {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fondo semi-transparente */
   padding: 20px;
-  border-radius: 15px;/* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra alrededor */
   margin-bottom: 20px;
 }
 
 /* Estilo del texto del título */
 .titulo-cuadrado h1 {
-  font-family:  'Fredoka One';
+  font-family: 'Fredoka One';
   font-size: 3em;
-  color: #212121 ;
+  color: #212121;
   margin: 0;
-  animation: fadeIn 2s ease-in-out; /* Animación de aparición */
+  animation: fadeIn 2s ease-in-out;
+  /* Animación de aparición */
 }
 
 /* Animación de desvanecimiento */
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
 
-}/* Estilos para la cabecera */
+  100% {
+    opacity: 1;
+  }
+
+}
+
+/* Estilos para la cabecera */
 .header-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: white; /* O el color que prefieras */
-  position: fixed;   /* Opcional: si quieres que la cabecera permanezca fija al hacer scroll */
+  background: white;
+  /* O el color que prefieras */
+  position: fixed;
+  /* Opcional: si quieres que la cabecera permanezca fija al hacer scroll */
   top: 0;
   left: 0;
   z-index: 1000;
@@ -56,13 +78,15 @@
 
 /* Tamaño del logo en la cabecera */
 .logo-header {
-  width: 450px; /* Ajusta el tamaño según tus necesidades */
+  width: 450px;
+  /* Ajusta el tamaño según tus necesidades */
   height: auto;
 }
 
 /* Agrega un margen superior al contenido para evitar que quede tapado por la cabecera fija */
 .titulo-cuadrado {
-  margin-top: 100px; /* Ajusta el valor según la altura de la cabecera */
+  margin-top: 100px;
+  /* Ajusta el valor según la altura de la cabecera */
 }
 
 /* Tamaño del logo principal */
@@ -81,7 +105,7 @@
 /* Estilo general de los botones */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-.boton-comenzar{
+.boton-comenzar {
   margin-top: 20px;
   padding: 20px 30px;
   background-color: #f65e5e;
@@ -93,8 +117,10 @@
   font-family: 'Righteous', sans-serif;
   transition: transform 0.3s ease;
   animation: bounce 2s infinite;
-  margin-right: 20px; /* Espacio a la derecha del botón */
+  margin-right: 20px;
+  /* Espacio a la derecha del botón */
 }
+
 .boton-comenzar:hover {
   background-color: #4a85c5;
 }
@@ -111,14 +137,18 @@
   font-family: 'Righteous', sans-serif;
   transition: transform 0.3s ease;
   animation: bounce 2s infinite;
-  margin-right: 20px; /* Espacio a la derecha del botón */
-  
+  margin-right: 20px;
+  /* Espacio a la derecha del botón */
+
 }
+
 /* Efecto mover para el botón */
 .boton-ingresar:hover {
-  background-color: #4a85c5; 
-  transform: scale(1.1); /* Agranda el botón cuando se pasa el cursor */
+  background-color: #4a85c5;
+  transform: scale(1.1);
+  /* Agranda el botón cuando se pasa el cursor */
 }
+
 .boton-regresar {
   margin-top: 20px;
   padding: 10px 20px;
@@ -131,7 +161,8 @@
   font-family: 'Righteous', sans-serif;
   transition: transform 0.3s ease;
   animation: bounce 2s infinite;
-  margin-right: 20px; /* Espacio a la derecha del botón */
+  margin-right: 20px;
+  /* Espacio a la derecha del botón */
 }
 
 .boton-regresar:hover {
@@ -140,12 +171,25 @@
 
 /* Animación de rebote */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
 }
-.boton-comenzar2{
+
+.boton-comenzar2 {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #f65e5e;
@@ -157,8 +201,10 @@
   font-family: 'Righteous', sans-serif;
   transition: transform 0.3s ease;
   animation: bounce 2s infinite;
-  margin-right: 20px; /* Espacio a la derecha del botón */
+  margin-right: 20px;
+  /* Espacio a la derecha del botón */
 }
+
 .boton-comenzar2:hover {
   background-color: #69a498;
 }
@@ -175,7 +221,8 @@
   font-family: 'Righteous', sans-serif;
   transition: transform 0.3s ease;
   animation: bounce 2s infinite;
-  margin-right: 20px; /* Espacio a la derecha del botón */
+  margin-right: 20px;
+  /* Espacio a la derecha del botón */
 }
 
 .boton-regresar2:hover {
@@ -193,20 +240,22 @@
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-  cursor: pointer; 
+  cursor: pointer;
   font-size: 26px;
   font-weight: bold;
   color: #151313;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0px 4px 8px rgba(110, 109, 109, 0.2); /* Añadir una sombra */
+  box-shadow: 0px 4px 8px rgba(110, 109, 109, 0.2);
+  /* Añadir una sombra */
 }
 
 
 /* Efecto mover para los rectángulos */
 .rectangulo:hover {
   background-color: rgb(4, 123, 144);
-  transform: scale(1.05);/* Agrandar ligeramente al hacer hover */
+  transform: scale(1.05);
+  /* Agrandar ligeramente al hacer hover */
 }
 
 
@@ -276,6 +325,7 @@
   cursor: grab;
   font-size: 18px;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -306,6 +356,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -315,13 +366,17 @@
 
 /* Fondo de toda la página de cursos */
 .cursos {
-  background-image: url('./imagenes/logoCursos.jpg'); 
-  background-size: cover; /* La imagen de fondo cubre toda la pantalla */
-  background-position: center; 
-  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  background-image: url('../public/image/logoCursos.jpg');
+  background-size: cover;
+  /* La imagen de fondo cubre toda la pantalla */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Evita la repetición de la imagen */
   text-align: center;
-  font-size: 1em; /* AUMENTA EL TAMAÑO DEL TEXTO */
-  min-height: 100vh; /* Altura mínima de la aplicación */
+  font-size: 1em;
+  /* AUMENTA EL TAMAÑO DEL TEXTO */
+  min-height: 100vh;
+  /* Altura mínima de la aplicación */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -331,35 +386,55 @@
 /* Contenedor para títulos y los rectángulos */
 .contenedor {
   display: flex;
-  flex-direction: row; /* Alineación en fila */
+  flex-direction: row;
+  /* Alineación en fila */
   align-items: center;
-  justify-content: space-between; /* Distribuye espacio entre elementos */
-  gap: 20px; /* Espaciado entre la imagen y la tarjeta */
+  justify-content: space-between;
+  /* Distribuye espacio entre elementos */
+  gap: 20px;
+  /* Espaciado entre la imagen y la tarjeta */
   width: 110%;
-  max-width: 1220px; /* Ajuste máximo del contenedor */
+  max-width: 1220px;
+  /* Ajuste máximo del contenedor */
 }
 
 
 /* Tarjeta de Cursos */
-.contenedor-tarjetaCursos { 
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente */
-  padding: 30px; /* Espacio interno */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  width: 50%; /* Anchura proporcional al tamaño de la pantalla */
-  max-width: 650px; /* Máximo tamaño */
-  height: 80%; /* Altura */
-  position: absolute; /* Posición absoluta */
-  right: 5%; /* Tarjeta alineada a la derecha */
-  top: 50%; /* Centrada verticalmente */
-  transform: translateY(-50%); /* Ajusta al centro vertical */
+.contenedor-tarjetaCursos {
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Fondo blanco ligeramente transparente */
+  padding: 30px;
+  /* Espacio interno */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+  width: 50%;
+  /* Anchura proporcional al tamaño de la pantalla */
+  max-width: 650px;
+  /* Máximo tamaño */
+  height: 80%;
+  /* Altura */
+  position: absolute;
+  /* Posición absoluta */
+  right: 5%;
+  /* Tarjeta alineada a la derecha */
+  top: 50%;
+  /* Centrada verticalmente */
+  transform: translateY(-50%);
+  /* Ajusta al centro vertical */
 
   /* Nuevos estilos para centrar contenido */
-  display: flex; /* Convierte en contenedor flex */
-  flex-direction: column; /* Alinea elementos verticalmente */
-  justify-content: center; /* Centra contenido verticalmente */
-  align-items: center; /* Centra contenido horizontalmente */
-  text-align: center; /* Asegura que el texto esté centrado */
+  display: flex;
+  /* Convierte en contenedor flex */
+  flex-direction: column;
+  /* Alinea elementos verticalmente */
+  justify-content: center;
+  /* Centra contenido verticalmente */
+  align-items: center;
+  /* Centra contenido horizontalmente */
+  text-align: center;
+  /* Asegura que el texto esté centrado */
 }
 
 
@@ -368,43 +443,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  max-width: 400px; /* Limita el ancho máximo */
-  padding: 30px; /* Ajusta el relleno interno */
+  width: 100%;
+  /* Ocupa todo el ancho del contenedor */
+  max-width: 400px;
+  /* Limita el ancho máximo */
+  padding: 30px;
+  /* Ajusta el relleno interno */
   background-color: #f0f0f0;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5em; /* AUMENTA EL TAMAÑO DEL TEXTO */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave */
+  font-size: 1.5em;
+  /* AUMENTA EL TAMAÑO DEL TEXTO */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Efecto suave */
 }
 
 .rectangulocurso:hover {
-  background-color: #d0d0d0; /* Cambia el color al pasar el mouse */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  background-color: #d0d0d0;
+  /* Cambia el color al pasar el mouse */
+  transform: scale(1.05);
+  /* Aumenta ligeramente el tamaño */
 }
 
 /*------------------------------------------------------------------------------*/
 /* Pagina de las materias */
 .contenedor-principal {
   display: flex;
-  justify-content: center; /* Centra los inputs */
-  align-items: center; /* Alinea verticalmente */
+  justify-content: center;
+  /* Centra los inputs */
+  align-items: center;
+  /* Alinea verticalmente */
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px; /* Aumenta la separación */
+  gap: 60px;
+  /* Aumenta la separación */
 }
 
 .input-lindo {
   font-size: 28px;
   padding: 10px;
-  width: 200px; 
-  
+  width: 200px;
+
 }
 
 .contenedor-rectangulosMaterias {
@@ -413,11 +498,14 @@
   align-items: center;
   margin: 0 auto;
   width: 70%;
-  gap: 50px; /* Espacio entre los rectángulos */
+  gap: 50px;
+  /* Espacio entre los rectángulos */
 }
+
 .contenedor-principal {
-  background-image: url('./imagenes/logoMteria.jpg');
-  background-size: 100%; /* Reduces image size to 80% */
+  background-image: url('../public/image/logoMteria.jpg');
+  background-size: 100%;
+  /* Reduces image size to 80% */
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -435,10 +523,13 @@
   font-size: 45px;
   font-family: 'Fredoka One', cursive;
   color: #1d1913;
-  text-shadow: 
-  0 0 10px #FFD700,   /* Brillo amarillo suave */
-  0 0 20px #FFA500,   /* Brillo naranja más intenso */
-  0 0 30px #FF4500;   /* Brillo rojo-anaranjado */
+  text-shadow:
+    0 0 10px #FFD700,
+    /* Brillo amarillo suave */
+    0 0 20px #FFA500,
+    /* Brillo naranja más intenso */
+    0 0 30px #FF4500;
+  /* Brillo rojo-anaranjado */
 
 }
 
@@ -464,12 +555,16 @@
 
 
 /*Fondo de cursos*/
-.contenedor{ 
-  background-size: cover;/* La imagen de fondo cubre toda la pantalla */
-  background-position: center; /* Centra la imagen de fondo */
-  background-repeat: no-repeat;/* Evita la repetición de la imagen */
+.contenedor {
+  background-size: cover;
+  /* La imagen de fondo cubre toda la pantalla */
+  background-position: center;
+  /* Centra la imagen de fondo */
+  background-repeat: no-repeat;
+  /* Evita la repetición de la imagen */
   text-align: center;
-  min-height: 80vh; /* Altura mínima de la aplicación */
+  min-height: 80vh;
+  /* Altura mínima de la aplicación */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -480,73 +575,106 @@
 /*------------------------------------------------Cursos----------------------------------------------*/
 
 /*Pagina de Bienvenida*/
-.bienvenida{
-  background-image: url('./imagenes/logoBienvenida.jpg'); 
-  background-size: cover; 
+.bienvenida {
+  background-image: url('../public/image/logoBienvenida.jpg');
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  color: black; 
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+/*Pagina de Test Matematicas*/
+.container {
+  background-image: url('../public/image/logoM3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
 
 
 .contenedor-tarjetabienvenida {
-  background-color: rgba(255, 255, 255, 0.8); /* Un fondo blanco semitransparente */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Un fondo blanco semitransparente */
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 80%;
-  max-width: 500px; /* Limita el tamaño máximo */
-  position: absolute; /* Coloca la tarjeta en una posición absoluta */
-  right: 0; /* O también 'left: 0;' si prefieres que esté en la izquierda */
-  margin-right: 200px; /* Ajusta el espacio a la derecha de la tarjeta */
+  max-width: 500px;
+  /* Limita el tamaño máximo */
+  position: absolute;
+  /* Coloca la tarjeta en una posición absoluta */
+  right: 0;
+  /* O también 'left: 0;' si prefieres que esté en la izquierda */
+  margin-right: 200px;
+  /* Ajusta el espacio a la derecha de la tarjeta */
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .titulo-bienvenida h2 {
   font-family: 'Righteous', sans-serif;
   font-size: 2.5em;
-  color: #77bca0; 
+  color: #77bca0;
   margin: 0;
-  animation: bounceIn 1.5s ease-in-out; /* Efecto de animación */
+  animation: bounceIn 1.5s ease-in-out;
+  /* Efecto de animación */
 }
 
 .instrucciones {
   font-family: 'Righteous', sans-serif;
-  color: #444; /* Color de texto más claro */
+  color: #444;
+  /* Color de texto más claro */
   padding: 20px;
-  text-align: center; /* Centra el texto */
+  text-align: center;
+  /* Centra el texto */
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra el contenido verticalmente */
-  text-align: center; /* Centra los textos dentro del contenedor */
+  flex-direction: column;
+  /* Alinea los elementos verticalmente */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: center;
+  /* Centra el contenido verticalmente */
+  text-align: center;
+  /* Centra los textos dentro del contenedor */
   animation: fadeInUp 2s ease-in-out;
 }
 
 .instrucciones h4 {
   font-size: 1.8em;
-  color: #FF8C75; 
-  margin-bottom: 15px; 
+  color: #FF8C75;
+  margin-bottom: 15px;
   animation: popUp 1s ease;
 }
 
-.icono{
+.icono {
   width: 20%;
   height: 20%;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto al pasar el ratón */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Efecto al pasar el ratón */
 }
+
 .icono:hover {
-  transform: scale(1.1); /* Hace que la imagen se agrande un poco al pasar el ratón */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+  transform: scale(1.1);
+  /* Hace que la imagen se agrande un poco al pasar el ratón */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más prominente */
 }
+
 /*---------------------------------------------------------------------------
 
 /* Evaluacion4to.css */
@@ -569,7 +697,8 @@
 .valorCirculo {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Hace el círculo */
+  border-radius: 50%;
+  /* Hace el círculo */
   background-color: #4caf50;
   color: white;
   display: inline-flex;
@@ -578,11 +707,13 @@
   margin: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out; /* Para animación de movimiento */
+  transition: transform 0.3s ease-in-out;
+  /* Para animación de movimiento */
 }
 
 .valorCirculo:hover {
-  transform: translateY(-10px); /* Simula el movimiento de "despegue" */
+  transform: translateY(-10px);
+  /* Simula el movimiento de "despegue" */
 }
 
 /* Estilos para la tabla */
@@ -610,9 +741,11 @@ table th {
   0% {
     transform: scale(0);
   }
+
   60% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
@@ -623,6 +756,7 @@ table th {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -630,21 +764,30 @@ table th {
 }
 
 @keyframes popUp {
-  0% {transform: scale(0);
+  0% {
+    transform: scale(0);
     opacity: 0;
   }
-  50% {transform: scale(1.2);
+
+  50% {
+    transform: scale(1.2);
   }
-  100% {transform: scale(1);
+
+  100% {
+    transform: scale(1);
     opacity: 1;
   }
 }
 
 @keyframes listAppear {
-  0% {opacity: 0;
-    transform: translateY(20px);}
-  100% {opacity: 1;
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
     transform: translateY(0);
   }
-  
+
 }

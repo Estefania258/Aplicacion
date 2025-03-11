@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
-
 import React, { useState } from "react";
-import ImgCentena from "../../imagenes/logoCentena.png";
-import ImgDecenas from "../../imagenes/logoDecenas.png";
-import ImgUnidades from "../../imagenes/logoUnidad.png";
 
 // Cargar la fuente de Google Fonts
 const loadGoogleFont = () => {
@@ -40,12 +36,12 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
   };
 
   // Función que valida las respuestas y asigna la puntuación
-   // Función que valida las respuestas y asigna la puntuación
-   const handleValidacion = () => {
-    const respuestaCentenas = parseInt(numeros[1], 10);  
+  // Función que valida las respuestas y asigna la puntuación
+  const handleValidacion = () => {
+    const respuestaCentenas = parseInt(numeros[1], 10);
     const respuestaDecenas = parseInt(numeros[2], 10);
     const respuestaUnidades = parseInt(numeros[3], 10);
-    const respuestaTotal = parseInt(total, 10);  
+    const respuestaTotal = parseInt(total, 10);
 
     let totalScore = 1;
     const newErrors = {};
@@ -99,10 +95,10 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
   return (
     <div style={{ fontFamily: "'Livvic', sans-serif", padding: "20px" }}>
       <h3 style={{ color: "#FF6347", textAlign: "center", fontSize: "2.5 em", fontWeight: "bold" }}>
-      🎮📒Pregunta 2🎮📒
+        🎮📒Pregunta 2🎮📒
       </h3>
       <p style={{ textAlign: "center", color: "#FF7F50", fontSize: "32px" }}>
-      ¡Ayuda a completar con los números correctos las centenas, decenas y unidades.! 🚀
+        ¡Ayuda a completar con los números correctos las centenas, decenas y unidades.! 🚀
       </p>
 
       <div style={{
@@ -118,9 +114,9 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
         {/* Centenas */}
         <div style={{ width: "30%", textAlign: "center" }}>
           <h4 style={{ fontSize: "20px", color: "#212121" }}>Centenas</h4>
-          <img src={ImgCentena} alt="Centena" style={{ width: "100px", height: "100px" }} />
-          <img src={ImgCentena} alt="Centena" style={{ width: "100px", height: "100px" }} />
-          <img src={ImgCentena} alt="Centena" style={{ width: "100px", height: "100px" }} />
+          <img src="/image/logoCentena.png" alt="Centena" style={{ width: "100px", height: "100px" }} />
+          <img src="/image/logoCentena.png" alt="Centena" style={{ width: "100px", height: "100px" }} />
+          <img src="/image/logoCentena.png" alt="Centena" style={{ width: "100px", height: "100px" }} />
 
           <input
             type="number"
@@ -140,7 +136,7 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
         {/* Decenas */}
         <div style={{ width: "30%", textAlign: "center" }}>
           <h4 style={{ fontSize: "20px", color: "#212121" }}>Decenas</h4>
-          <img src={ImgDecenas} alt="Decenas" style={{ width: "100px", height: "100px" }} />
+          <img src="/image/logoDecenas.png" alt="Decenas" style={{ width: "100px", height: "100px" }} />
           <input
             type="number"
             value={numeros[2]}
@@ -159,7 +155,7 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
         {/* Unidades */}
         <div style={{ width: "30%", textAlign: "center" }}>
           <h4 style={{ fontSize: "20px", color: "#212121" }}>Unidades</h4>
-          <img src={ImgUnidades} alt="Unidades" style={{ width: "100px", height: "100px" }} />
+          <img src="/image/logoUnidad.png" alt="Unidades" style={{ width: "100px", height: "100px" }} />
           <input
             type="number"
             value={numeros[3]}
@@ -199,32 +195,32 @@ const P2Matematicas2 = ({ nextQuestion }) => { // Recibimos nextQuestion por pro
       </div>
 
       {/* Botón siguiente */}
-<div style={{ marginTop: "20px", textAlign: "center" }}>
-  <button
-    onClick={handleValidacion}
-    style={{
-      backgroundColor: "#E60073", // Rosa brillante
-      color: "#fff",
-      fontSize: "20px", // Tamaño de letra mayor para hacerlo legible y atractivo
-      padding: "12px 30px", // Aumento del padding para mayor tamaño del botón
-      border: "none",
-      borderRadius: "10px", // Bordes redondeados para hacerlo más suave
-      cursor: "pointer",
-      fontWeight: "bold", // Letra en negrita
-      fontFamily: "'Comic Sans MS', cursive, sans-serif", // Fuente amigable para niños
-      boxShadow: "0px 8px 15px rgba(249, 247, 246, 0.6)", // Sombra suave para un toque tridimensional
-      transition: "all 0.3s ease-in-out", // Transición suave para efectos
-    }}
-    onMouseEnter={(e) => {
-      e.target.style.transform = "scale(1.1)"; // Escala el botón para hacerlo un poco más grande al pasar el ratón
-    }}
-    onMouseLeave={(e) => {
-      e.target.style.transform = "scale(1)"; // Restaura el tamaño original
-    }}
-  >
-    ¡Siguiente! 
-  </button>
-</div>
+      <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <button
+          onClick={handleValidacion}
+          style={{
+            backgroundColor: "#E60073", // Rosa brillante
+            color: "#fff",
+            fontSize: "20px", // Tamaño de letra mayor para hacerlo legible y atractivo
+            padding: "12px 30px", // Aumento del padding para mayor tamaño del botón
+            border: "none",
+            borderRadius: "10px", // Bordes redondeados para hacerlo más suave
+            cursor: "pointer",
+            fontWeight: "bold", // Letra en negrita
+            fontFamily: "'Comic Sans MS', cursive, sans-serif", // Fuente amigable para niños
+            boxShadow: "0px 8px 15px rgba(249, 247, 246, 0.6)", // Sombra suave para un toque tridimensional
+            transition: "all 0.3s ease-in-out", // Transición suave para efectos
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = "scale(1.1)"; // Escala el botón para hacerlo un poco más grande al pasar el ratón
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = "scale(1)"; // Restaura el tamaño original
+          }}
+        >
+          ¡Siguiente!
+        </button>
+      </div>
 
     </div>
   );

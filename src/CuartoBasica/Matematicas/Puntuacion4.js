@@ -1,12 +1,8 @@
 /* eslint-disable no-unused-vars */
-
-
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import LogoUDIPSAI from "../../imagenes/logoUDIPSAI.jpg"; // Asegúrate de que la imagen esté en la carpeta correcta  
 
 const Puntuacion = () => {
   const navigate = useNavigate();
@@ -71,7 +67,7 @@ const Puntuacion = () => {
     const fechaHora = new Date();
     const fecha = fechaHora.toLocaleDateString();
     const hora = fechaHora.toLocaleTimeString();
-  
+
     // Capturamos el contenedor completo (sin alterar su tamaño ni recortarlo)
     html2canvas(input, {
       backgroundColor: null,
@@ -88,7 +84,7 @@ const Puntuacion = () => {
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
-  
+
       // -------------------
       // Encabezado del PDF
       // -------------------
@@ -97,19 +93,19 @@ const Puntuacion = () => {
       const logoHeight = 15;
       const logoX = (pageWidth - logoWidth) / 2;
       const logoY = 10;
-      pdf.addImage(LogoUDIPSAI, 'PNG', logoX, logoY, logoWidth, logoHeight);
-  
+      pdf.addImage('/image/logoUDIPSAI.jpg', 'PNG', logoX, logoY, logoWidth, logoHeight);
+
       pdf.setFontSize(16);
       const textX = pageWidth / 2;
       const textY = logoY + logoHeight + 10;
       pdf.text("Evaluación Matemáticas Segundo de Básica", textX, textY, { align: "center" });
-  
+
       pdf.setFontSize(10);
       const fechaHoraX = margin;
       const fechaHoraY = textY + 10;
       pdf.text(`Fecha de descarga: ${fecha}`, fechaHoraX, fechaHoraY);
       pdf.text(`Hora: ${hora}`, fechaHoraX, fechaHoraY + 4);
-  
+
       // -------------------------------
       // Cálculo para agregar la imagen
       // -------------------------------
@@ -119,16 +115,16 @@ const Puntuacion = () => {
       const imgWidth = pageWidth - 2 * margin;
       // Se mantiene la relación de aspecto original de la captura
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
+
       // En la primera página, el área disponible para la imagen es:
       const availablePageHeight = pageHeight - startY;
       // Se calcula cuánto de la imagen (en altura) excede la primera página
       let remainingHeight = imgHeight - availablePageHeight;
-  
+
       // Se agrega la imagen completa (en tamaño escalado) a la primera página
       // Nota: jsPDF "pinta" toda la imagen, pero gracias a un offset negativo en páginas siguientes
       pdf.addImage(imgData, 'PNG', margin, startY, imgWidth, imgHeight);
-  
+
       // Mientras quede parte de la imagen sin mostrar, se agregan nuevas páginas
       while (remainingHeight > 0) {
         pdf.addPage();
@@ -141,7 +137,7 @@ const Puntuacion = () => {
         pdf.addImage(imgData, 'PNG', margin, offset, imgWidth, imgHeight);
         remainingHeight -= pageHeight;
       }
-  
+
       pdf.save('resultado_puntuacion.pdf');
     });
   };
@@ -222,18 +218,18 @@ const Puntuacion = () => {
               .map((part) => part.trim())
               .filter((part) => {
                 const operacion = part.split('→')[0].trim();
-                
+
                 // Aquí debes verificar si la operación está en las respuestas incorrectas
                 const esIncorrecta = item.respuestasIncorrectas.some((inc) => {
                   return inc === operacion; // Compara si la respuesta incorrecta contiene la operación
                 });
-          
+
                 return !esIncorrecta; // Filtra las respuestas incorrectas
               })
               .join(', ');
-          
+
             // Tu lógica adicional aquí
-          
+
             return (
               <div
                 key={index}
@@ -374,20 +370,20 @@ const Puntuacion = () => {
         Descargar PDF
       </button>
       <button
-          onClick={() => navigate('/materias/4to')}
-          style={{
-            backgroundColor: '#FF5722',
-            color: '#fff',
-            padding: '15px 30px',
-            fontSize: '18px',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Regresar
-        </button>
+        onClick={() => navigate('/materias/4to')}
+        style={{
+          backgroundColor: '#FF5722',
+          color: '#fff',
+          padding: '15px 30px',
+          fontSize: '18px',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        }}
+      >
+        Regresar
+      </button>
     </div>
   );
 };

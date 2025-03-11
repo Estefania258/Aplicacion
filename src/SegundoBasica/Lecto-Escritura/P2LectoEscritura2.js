@@ -1,8 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import ImgNadar from "../../imagenes/logoNadar.png";
-import ImgAmanecer from "../../imagenes/logoAmanecer.png";
-import ImgMono from "../../imagenes/logoMono.jpg";
-import ImgDado from "../../imagenes/logoDado.jpg";
 import "./Preguntas.css";
 
 const oraciones = [
@@ -10,7 +6,7 @@ const oraciones = [
     textoOriginal: "Diana [ImgNadar] en la [ImgAmanecer]",
     textoEditable: "Diana [ ] en la [ ]",
     opciones: ["nada", "mañana"],
-    imagenes: [ImgNadar, ImgAmanecer],
+    imagenes: ['/image/logoNadar.png', '/image/logoAmanecer.png'],
     correctas: { 0: "nada", 1: "mañana" },
     color: "#FF6347",
   },
@@ -18,7 +14,7 @@ const oraciones = [
     textoOriginal: "Un [ImgMono] dañó un [ImgDado]",
     textoEditable: "Un [ ] dañó un [ ]",
     opciones: ["mono", "dado"],
-    imagenes: [ImgMono, ImgDado],
+    imagenes: ['/image/logoMono.jpg', '/image/logoDado.jpg'],
     correctas: { 0: "mono", 1: "dado" },
     color: "#4682B4",
   },
@@ -34,25 +30,25 @@ const P2LectoEscritura2 = ({ onAnswer }) => {
 
   const handleDrop = useCallback((oracionIndex, posicion) => {
     if (!draggedItem || draggedItem.oracionIndex !== oracionIndex) return;
-    
+
     setRespuestas(prev => {
       const newKey = `pregunta2-${oracionIndex}-${posicion}`;
-      const newState = { 
-        ...prev, 
-        [newKey]: draggedItem.palabra 
+      const newState = {
+        ...prev,
+        [newKey]: draggedItem.palabra
       };
-      
+
       // Verificar si todas las respuestas están completas
-      const totalEsperado = oraciones.reduce((acc, oracion) => 
+      const totalEsperado = oraciones.reduce((acc, oracion) =>
         acc + (oracion.textoEditable.match(/\[ \]/g) || []).length, 0);
-      
+
       if (Object.keys(newState).length === totalEsperado) {
         onAnswer("pregunta2", newState);
       }
 
       return newState;
     });
-    
+
     setDraggedItem(null);
   }, [draggedItem, onAnswer]);
 
@@ -78,9 +74,9 @@ const P2LectoEscritura2 = ({ onAnswer }) => {
   }, [respuestas, handleDrop]);
 
   useEffect(() => {
-    const totalRespuestas = oraciones.reduce((acc, oracion) => 
+    const totalRespuestas = oraciones.reduce((acc, oracion) =>
       acc + (oracion.textoEditable.match(/\[ \]/g) || []).length, 0);
-    
+
     if (Object.keys(respuestas).length === totalRespuestas) {
       onAnswer("pregunta2", respuestas);
     }

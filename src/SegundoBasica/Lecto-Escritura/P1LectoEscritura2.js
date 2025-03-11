@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ImgMariposa from "../../imagenes/logoMariposa.png";
-import ImgNido from "../../imagenes/logoNido.png";
 import "./Preguntas.css";
 
 const P1LectoEscritura2 = ({ onAnswer }) => {
@@ -11,7 +9,7 @@ const P1LectoEscritura2 = ({ onAnswer }) => {
     { id: "mariposa", label: "Mariposa" },
     { id: "nido", label: "Nido" },
   ];
-  
+
   const handleDragStart = (item) => {
     setDraggedItem(item);
   };
@@ -31,12 +29,12 @@ const P1LectoEscritura2 = ({ onAnswer }) => {
       onAnswer("pregunta1", respuestas);
     }
   }, [respuestas, onAnswer]);
-  
+
 
   return (
     <div className="pregunta-container">
       <h3>Arrastra el nombre correcto a la imagen</h3>
-      
+
       <div className="opciones-container">
         {opciones.map((opcion) => (
           <div
@@ -52,7 +50,7 @@ const P1LectoEscritura2 = ({ onAnswer }) => {
 
       <div className="imagenes-container">
         <div className="imagen-target">
-          <img src={ImgMariposa} alt="Mariposa" />
+          <img src='/image/logoMariposa.png' alt="Mariposa" />
           <div
             className="drop-zone"
             onDrop={() => handleDrop(1, 0)}
@@ -63,7 +61,7 @@ const P1LectoEscritura2 = ({ onAnswer }) => {
         </div>
 
         <div className="imagen-target">
-          <img src={ImgNido} alt="Nido" />
+          <img src='/image/logoNido.png' alt="Nido" />
           <div
             className="drop-zone"
             onDrop={() => handleDrop(1, 1)}

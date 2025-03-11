@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import LogoUDIPSAI from "../../imagenes/logoUDIPSAI.jpg"; // Asegúrate de que la imagen esté en la carpeta correcta  
 
 const Puntuacion = () => {
   const navigate = useNavigate();
@@ -67,7 +66,7 @@ const Puntuacion = () => {
       const logoX = (pdf.internal.pageSize.width - logoWidth) / 2;
       const logoY = 10;
 
-      pdf.addImage(LogoUDIPSAI, 'PNG', logoX, logoY, logoWidth, logoHeight);
+      pdf.addImage("/image/logoUDIPSAI.jpg", 'PNG', logoX, logoY, logoWidth, logoHeight);
 
       pdf.setFontSize(16);
       const textX = pdf.internal.pageSize.width / 2;

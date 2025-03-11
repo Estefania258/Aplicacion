@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import fondo from '../../imagenes/logoM3.png';
 import P1Matematicas3 from './P1Matematicas3';
 import P2Matematicas3 from './P2Matematicas3';
 import P3Matematicas3 from './P3Matematicas3';
@@ -53,10 +52,10 @@ const Matematicas3ro = () => {
     <P9Matematicas3 nextQuestion={nextQuestion} />,
     <P10Matematicas3 nextQuestion={nextQuestion} />,
     <P11Matematicas3 nextQuestion={nextQuestion} />,
-    <Puntuacion 
-      restartQuiz={restartQuiz} 
-      puntuacion={puntuacionTotal} 
-      totalPreguntas={totalPreguntas} 
+    <Puntuacion
+      restartQuiz={restartQuiz}
+      puntuacion={puntuacionTotal}
+      totalPreguntas={totalPreguntas}
     />,
   ];
 
@@ -64,7 +63,6 @@ const Matematicas3ro = () => {
     <div
       className="container"
       style={{
-        backgroundImage: `url(${fondo})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
