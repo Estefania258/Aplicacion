@@ -1,0 +1,247 @@
+/* Cargar la fuente solo para el título */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Estilos generales */
+.Hornero {
+    background: linear-gradient(to bottom right, #ffe2de, #ffe9b5);
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.Hornero .lectura-hornero-container {
+    max-width: 1007px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* Contenedor principal */
+.lectura-hornero-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    background: #fff5e6;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título llamativo */
+.lectura-hornero-titulo {
+    color: #d2691e;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Cuerpo del texto */
+.lectura-hornero-texto {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Estilo para la imagen */
+.lectura-hornero-imagen {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    animation: hornero-flotar 3s infinite alternate ease-in-out;
+}
+
+@keyframes hornero-flotar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Botón interactivo */
+.lectura-hornero-boton {
+    background: #ff5722;
+    color: white;
+    padding: 1px 1px; /* Ajusta el relleno para cambiar el tamaño */
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px; /* Cambia el ancho del botón */
+}
+
+.lectura-hornero-boton.animado {
+    animation: hornero-pulse 1.5s infinite;
+}
+
+
+@keyframes hornero-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Pregunta */
+.lectura-hornero-pregunta {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Opciones grandes */
+.lectura-hornero-opcion {
+    display: block;
+    font-size: 20px;
+    background: #ffcc80;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 8px auto;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%;
+    text-align: center;
+}
+
+.lectura-hornero-opcion:hover {
+    background: #ffb74d;
+}
+
+/* Tablas estilizadas */
+.tabla-grande, .tabla-pequeña {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tabla-grande thead, .tabla-pequeña thead {
+    background-color: #ffccbc;
+}
+
+.tabla-grande tbody tr:nth-child(even), .tabla-pequeña tbody tr:nth-child(even) {
+    background-color: #ffe0b2;
+}
+
+.tabla-grande tbody tr:nth-child(odd), .tabla-pequeña tbody tr:nth-child(odd) {
+    background-color: #fff3e0;
+}
+
+/* Botón de regresar */
+.btn-regresar-hornero {
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-regresar-hornero:hover {
+    background: #45a049;
+}
+
+/* Ajuste para botones alineados */
+.btn-regresar-hornero + .lectura-hornero-boton {
+    margin-left: 10px;
+}
+
+/* Estilo al finalizar */
+.lectura-hornero-finalizado {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+}
+/* Estilos generales para la tabla */
+.tabla-grande, .tabla-pequeña, .tabla-pequeña-preguntas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+  }
+  
+  .tabla-grande th, .tabla-pequeña th, .tabla-pequeña-preguntas th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .tabla-grande td, .tabla-pequeña td, .tabla-pequeña-preguntas td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .tabla-grande tr:nth-child(even), .tabla-pequeña tr:nth-child(even), .tabla-pequeña-preguntas tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tabla-grande tr:hover, .tabla-pequeña tr:hover, .tabla-pequeña-preguntas tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Estilo para botones */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+   /* Estilos de los botones de Sí y No */
+.boton-fluidez {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.boton-si {
+    background-color: #90EE90;
+    color: #006400;
+}
+.boton-si:hover {
+    background-color: #32CD32;
+    transform: scale(1.1);
+}
+.boton-si-selected {
+    background-color: #008000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.boton-no {
+    background-color: #FFB6C1;
+    color: #8B0000;
+}
+.boton-no:hover {
+    background-color: #FF69B4;
+    transform: scale(1.1);
+}
+.boton-no-selected {
+    background-color: #DC143C;
+    color: white;
+    transform: scale(1.1);
+}

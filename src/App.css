@@ -1,0 +1,650 @@
+/* Estilo general de la aplicación */
+.App {
+  background-image: url('./imagenes/logoHongo.jpg');
+  background-size: cover;/* La imagen de fondo cubre toda la pantalla */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat;/* Evita la repetición de la imagen */
+  text-align: center;
+  min-height: 100vh; /* Altura mínima de la aplicación */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Mantiene la página fija */
+  top: 0; /* Establece que quede en la parte superior */
+  left: 0; /* Establece que quede en la parte izquierda */
+  width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+  overflow: hidden; /* Evita el desplazamiento si el contenido es mayor que la pantalla */
+} 
+
+/* Cuadro que contiene el título */
+.titulo-cuadrado {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  padding: 20px;
+  border-radius: 15px;/* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor */
+  margin-bottom: 20px;
+}
+
+/* Estilo del texto del título */
+.titulo-cuadrado h1 {
+  font-family:  'Fredoka One';
+  font-size: 3em;
+  color: #212121 ;
+  margin: 0;
+  animation: fadeIn 2s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+
+}/* Estilos para la cabecera */
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: white; /* O el color que prefieras */
+  position: fixed;   /* Opcional: si quieres que la cabecera permanezca fija al hacer scroll */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Tamaño del logo en la cabecera */
+.logo-header {
+  width: 450px; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+}
+
+/* Agrega un margen superior al contenido para evitar que quede tapado por la cabecera fija */
+.titulo-cuadrado {
+  margin-top: 100px; /* Ajusta el valor según la altura de la cabecera */
+}
+
+/* Tamaño del logo principal */
+.logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 70px;
+}
+
+.App-logo {
+  height: 80vmin;
+  pointer-events: none;
+}
+
+/*----------------------------------------------------------
+/* Estilo general de los botones */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.boton-comenzar{
+  margin-top: 20px;
+  padding: 20px 30px;
+  background-color: #f65e5e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous', sans-serif;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-right: 20px; /* Espacio a la derecha del botón */
+}
+.boton-comenzar:hover {
+  background-color: #4a85c5;
+}
+
+.boton-ingresar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #65a950;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous', sans-serif;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-right: 20px; /* Espacio a la derecha del botón */
+  
+}
+/* Efecto mover para el botón */
+.boton-ingresar:hover {
+  background-color: #4a85c5; 
+  transform: scale(1.1); /* Agranda el botón cuando se pasa el cursor */
+}
+.boton-regresar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #a0824b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous', sans-serif;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-right: 20px; /* Espacio a la derecha del botón */
+}
+
+.boton-regresar:hover {
+  background-color: #4a85c5;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+.boton-comenzar2{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f65e5e;
+  color: rgba(255, 255, 255, 0.963);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous', sans-serif;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-right: 20px; /* Espacio a la derecha del botón */
+}
+.boton-comenzar2:hover {
+  background-color: #69a498;
+}
+
+.boton-regresar2 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #69a498;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Righteous', sans-serif;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-right: 20px; /* Espacio a la derecha del botón */
+}
+
+.boton-regresar2:hover {
+  background-color: #f65e5e;
+}
+
+
+/*------------------------------------------------------------------
+/* Estilo de los rectángulos interactivos */
+.rectangulo {
+  width: 250%;
+  height: 120px;
+  background-color: #40a5ae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  cursor: pointer; 
+  font-size: 26px;
+  font-weight: bold;
+  color: #151313;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(110, 109, 109, 0.2); /* Añadir una sombra */
+}
+
+
+/* Efecto mover para los rectángulos */
+.rectangulo:hover {
+  background-color: rgb(4, 123, 144);
+  transform: scale(1.05);/* Agrandar ligeramente al hacer hover */
+}
+
+
+
+.preguntas-lectura {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Estilo de la imagen en la aplicación */
+.imagen-container {
+  margin: 10px auto;
+  width: 150px;
+  height: 150px;
+}
+
+/* Imagen dentro del contenedor */
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor de opciones con botones */
+.opciones-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+/* Botones de opción */
+.opcion-boton {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Efecto mover para los botones de opción */
+.opcion-boton:hover {
+  background-color: #0056b3;
+}
+
+/* Botón de envío */
+.submit-boton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Círculo con número */
+.numero-circulo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  font-size: 18px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Estilo de la cabecera */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+/* Enlace de la aplicación */
+.App-link {
+  color: #61dafb;
+}
+
+
+/* Animación de giro del logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Fondo de toda la página de cursos */
+.cursos {
+  background-image: url('./imagenes/logoCursos.jpg'); 
+  background-size: cover; /* La imagen de fondo cubre toda la pantalla */
+  background-position: center; 
+  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  text-align: center;
+  font-size: 1em; /* AUMENTA EL TAMAÑO DEL TEXTO */
+  min-height: 100vh; /* Altura mínima de la aplicación */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor para títulos y los rectángulos */
+.contenedor {
+  display: flex;
+  flex-direction: row; /* Alineación en fila */
+  align-items: center;
+  justify-content: space-between; /* Distribuye espacio entre elementos */
+  gap: 20px; /* Espaciado entre la imagen y la tarjeta */
+  width: 110%;
+  max-width: 1220px; /* Ajuste máximo del contenedor */
+}
+
+
+/* Tarjeta de Cursos */
+.contenedor-tarjetaCursos { 
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente */
+  padding: 30px; /* Espacio interno */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  width: 50%; /* Anchura proporcional al tamaño de la pantalla */
+  max-width: 650px; /* Máximo tamaño */
+  height: 80%; /* Altura */
+  position: absolute; /* Posición absoluta */
+  right: 5%; /* Tarjeta alineada a la derecha */
+  top: 50%; /* Centrada verticalmente */
+  transform: translateY(-50%); /* Ajusta al centro vertical */
+
+  /* Nuevos estilos para centrar contenido */
+  display: flex; /* Convierte en contenedor flex */
+  flex-direction: column; /* Alinea elementos verticalmente */
+  justify-content: center; /* Centra contenido verticalmente */
+  align-items: center; /* Centra contenido horizontalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+
+/* Rectángulos de cursos */
+.rectangulocurso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 400px; /* Limita el ancho máximo */
+  padding: 30px; /* Ajusta el relleno interno */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em; /* AUMENTA EL TAMAÑO DEL TEXTO */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave */
+}
+
+.rectangulocurso:hover {
+  background-color: #d0d0d0; /* Cambia el color al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/*------------------------------------------------------------------------------*/
+/* Pagina de las materias */
+.contenedor-principal {
+  display: flex;
+  justify-content: center; /* Centra los inputs */
+  align-items: center; /* Alinea verticalmente */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px; /* Aumenta la separación */
+}
+
+.input-lindo {
+  font-size: 28px;
+  padding: 10px;
+  width: 200px; 
+  
+}
+
+.contenedor-rectangulosMaterias {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  gap: 50px; /* Espacio entre los rectángulos */
+}
+.contenedor-principal {
+  background-image: url('./imagenes/logoMteria.jpg');
+  background-size: 100%; /* Reduces image size to 80% */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.titulo {
+  margin-bottom: 30px;
+  font-size: 45px;
+  font-family: 'Fredoka One', cursive;
+  color: #1d1913;
+  text-shadow: 
+  0 0 10px #FFD700,   /* Brillo amarillo suave */
+  0 0 20px #FFA500,   /* Brillo naranja más intenso */
+  0 0 30px #FF4500;   /* Brillo rojo-anaranjado */
+
+}
+
+
+.rectangulo {
+  padding: 20px 20px;
+  background-color: #efdaa0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rectangulo:hover {
+  background-color: #d0d0d0;
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+.mensaje-bienvenida {
+  margin-bottom: 20px;
+}
+
+
+/*Fondo de cursos*/
+.contenedor{ 
+  background-size: cover;/* La imagen de fondo cubre toda la pantalla */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat;/* Evita la repetición de la imagen */
+  text-align: center;
+  min-height: 80vh; /* Altura mínima de la aplicación */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*------------------------------------------------Cursos----------------------------------------------*/
+
+/*Pagina de Bienvenida*/
+.bienvenida{
+  background-image: url('./imagenes/logoBienvenida.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  color: black; 
+}
+
+
+.contenedor-tarjetabienvenida {
+  background-color: rgba(255, 255, 255, 0.8); /* Un fondo blanco semitransparente */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%;
+  max-width: 500px; /* Limita el tamaño máximo */
+  position: absolute; /* Coloca la tarjeta en una posición absoluta */
+  right: 0; /* O también 'left: 0;' si prefieres que esté en la izquierda */
+  margin-right: 200px; /* Ajusta el espacio a la derecha de la tarjeta */
+}
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.titulo-bienvenida h2 {
+  font-family: 'Righteous', sans-serif;
+  font-size: 2.5em;
+  color: #77bca0; 
+  margin: 0;
+  animation: bounceIn 1.5s ease-in-out; /* Efecto de animación */
+}
+
+.instrucciones {
+  font-family: 'Righteous', sans-serif;
+  color: #444; /* Color de texto más claro */
+  padding: 20px;
+  text-align: center; /* Centra el texto */
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Centra los textos dentro del contenedor */
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.instrucciones h4 {
+  font-size: 1.8em;
+  color: #FF8C75; 
+  margin-bottom: 15px; 
+  animation: popUp 1s ease;
+}
+
+.icono{
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto al pasar el ratón */
+}
+.icono:hover {
+  transform: scale(1.1); /* Hace que la imagen se agrande un poco al pasar el ratón */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+/*---------------------------------------------------------------------------
+
+/* Evaluacion4to.css */
+
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  position: absolute;
+}
+
+/* Estilos de los valores disponibles */
+.valorCirculo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Hace el círculo */
+  background-color: #4caf50;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out; /* Para animación de movimiento */
+}
+
+.valorCirculo:hover {
+  transform: translateY(-10px); /* Simula el movimiento de "despegue" */
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table td {
+  width: 33%;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+table th {
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+/* Animaciones de entrada */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  0% {transform: scale(0);
+    opacity: 0;
+  }
+  50% {transform: scale(1.2);
+  }
+  100% {transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes listAppear {
+  0% {opacity: 0;
+    transform: translateY(20px);}
+  100% {opacity: 1;
+    transform: translateY(0);
+  }
+  
+}

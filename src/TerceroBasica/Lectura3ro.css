@@ -1,0 +1,188 @@
+/* Cargar la fuente solo para el título */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Estilos generales */
+.Pesca {
+    background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.Pesca .lectura-pesca-container {
+    /* Aquí puedes cambiar los estilos sin afectar otros elementos */
+    max-width: 1007px; /* Cambia el ancho del contenedor */
+    width: 100%;
+    padding: 30px; /* Ajusta el espaciado interno */
+    background: #fff0f5; /* Cambia el color de fondo */
+}
+
+
+/* Contenedor principal */
+.lectura-pesca-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    background: #fff5e6;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.titulo-principal {
+    color: #FF6F61;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo del texto */
+.lectura-pesca-texto {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Botón principal */
+.lectura-pesca-boton {
+    background: #FF6F61;
+    color: white;
+    padding: 1px 1px;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px; /* Cambia el ancho del botón */
+}
+.lectura-pesca-boton:hover {
+    background: #E63946;
+    transform: scale(1.1);
+}
+
+
+.lectura-pesca-boton.animado {
+    animation: hornero-pulse 1.5s infinite;
+}
+
+/* Opciones */
+.lectura-pesca-opcion {
+    font-size: 20px;
+    background: #FFD166;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px auto;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    color: #333;
+    transition: 0.3s;
+}
+.lectura-pesca-opcion:hover {
+    background: #FFA07A;
+}
+
+/* Estilos de los botones de Sí y No */
+.boton-fluidez {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.boton-si {
+    background-color: #90EE90;
+    color: #006400;
+}
+.boton-si:hover {
+    background-color: #32CD32;
+    transform: scale(1.1);
+}
+.boton-si-selected {
+    background-color: #008000;
+    color: white;
+    transform: scale(1.1);
+}
+
+.boton-no {
+    background-color: #FFB6C1;
+    color: #8B0000;
+}
+.boton-no:hover {
+    background-color: #FF69B4;
+    transform: scale(1.1);
+}
+.boton-no-selected {
+    background-color: #DC143C;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilo de la tabla */
+.tabla-grande-pesca, .tabla-pequeña-pesca {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-grande-pesca thead, .tabla-pequeña-pesca thead {
+    background-color: #FF6F61;
+    font-size: 18px;
+}
+
+.tabla-grande-pesca tbody tr:nth-child(even), .tabla-pequeña-pesca tbody tr:nth-child(even) {
+    background-color: #FFF3CD;
+}
+
+.tabla-grande-pesca tbody tr:nth-child(odd), .tabla-pequeña-pesca tbody tr:nth-child(odd) {
+    background-color: #FFE0B5;
+}
+
+.tabla-grande-pesca tbody tr:hover, .tabla-pequeña-pesca tbody tr:hover {
+    background-color: #FF9AA2;
+}
+
+/* Botón regresar */
+.btn-regresar-pesca {
+    background: #6C757D;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.6em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-regresar-pesca:hover {
+    background: #343A40;
+    transform: scale(1.1);
+}
+
+/* Imagen de lectura */
+.lectura-pesca-imagen {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.lectura-pesca-imagen:hover {
+    transform: scale(1.1);
+}

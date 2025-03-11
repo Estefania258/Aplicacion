@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+
+
+
+.question-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideIn 1s ease-out;
+}
+
+h3 {
+  font-size: 2.5em;
+  color: #f83737;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Livvic", sans-serif;
+}
+
+h4 {
+  font-size: 1.8em;
+  color: #212121;
+  margin-bottom: 20px;
+  font-family: "Livvic", sans-serif;
+}
+
+.resultado-container {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.resultado-container.correcta {
+  color: green;
+}
+
+.resultado-container.incorrecta {
+  color: red;
+}
+
+button {
+  width: 150px;
+  padding: 16px;
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.correcto {
+  background-color: green;
+}
+
+button.correcto:hover {
+  background-color: darkgreen;
+}
+
+button.incorrecto {
+  background-color: red;
+}
+
+button.incorrecto:hover {
+  background-color: darkred;
+}
+
+button:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

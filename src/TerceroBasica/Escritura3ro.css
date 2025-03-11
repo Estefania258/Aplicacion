@@ -1,0 +1,241 @@
+/* Importar fuente amigable para niños */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Establecer box-sizing global */
+* {
+    box-sizing: border-box;
+}
+
+/* Animaciones */
+@keyframes escrituraBounceInLeft {
+    0% { transform: translateX(-1000px); opacity: 0; }
+    60% { transform: translateX(30px); opacity: 1; }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes escrituraZoomIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes escrituraFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Aplicar los estilos solo dentro de la página de escritura */
+.escritura-page {
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+    font-family: 'Fredoka One', cursive;
+    padding: 20px;
+    font-size: 1rem;  /* Tamaño base */
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .escritura-page {
+        font-size: 0.9rem;
+    }
+}
+
+/* Contenedor principal */
+.escritura-page .p-6 {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: escrituraZoomIn 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+/* Tarjetas */
+.escritura-page .lectura-card, 
+.escritura-page .evaluacion-card {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: escrituraBounceInLeft 1s ease-out;
+    transition: transform 0.3s;
+    margin-bottom: 20px; /* Espaciado adicional entre tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centra el texto */
+    font-size: 1.5em; /* Aumenta el tamaño de la letra */
+}
+
+/* Efecto al pasar el ratón sobre las tarjetas */
+.escritura-page .lectura-card:hover, 
+.escritura-page .evaluacion-card:hover {
+    transform: scale(1.05);
+}
+
+/* Botón de imprimir */
+.imprimir3ro-btn {
+    background: linear-gradient(90deg, #f088bc, #efbc9c);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.imprimir3ro-btn:hover {
+    background: linear-gradient(90deg,#e98e1e, #d81b1e);  /* Color de hover rosa */
+    transform: scale(1.1);
+}
+
+.imprimir3ro-btn:focus {
+    outline: 3px solid #ff4081;
+}
+/* Botón de imprimir */
+.finalizar3ro-btn {
+    background: linear-gradient(90deg,  #f088bc, #efbc9c);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.finalizar3ro-btn:hover {
+    background: linear-gradient(90deg, #e98e1e, #d81b1e);
+    transform: scale(1.1);
+}
+
+.finalizar3ro-btn:focus {
+    outline: 3px solid #ff4081;
+}
+
+/* Evaluación */
+.escritura-page .evaluacion-opciones {
+    margin-top: 15px;
+    display: flex;  /* Para alinearlos de forma horizontal */
+    flex-wrap: wrap; /* Para permitir el ajuste de los elementos si el espacio es insuficiente */
+    gap: 20px; /* Espaciado entre los elementos */
+    justify-content: space-around; /* Distribuye el espacio de forma equitativa */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.escritura-page .evaluacion-opciones h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+.escritura-page .evaluacion-opciones label {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 16px;
+    background: #ffebee;
+    padding: 8px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.escritura-page .evaluacion-opciones label:hover {
+    background: #ffcdd2;
+}
+
+.escritura-page .evaluacion-opciones input {
+    margin-right: 10px;
+    transform: scale(1.3);
+}
+
+/* Área de texto */
+.escritura-page .evaluacion-opciones textarea {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #ff8a80;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.escritura-page .evaluacion-opciones textarea:focus {
+    border: 2px solid #d32f2f;
+}
+
+/* Estilos de errores */
+.escritura-page .errores-escritura {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: #fff3e0;
+    border-radius: 10px;
+}
+
+.escritura-page .errores-escritura label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d84315;
+}
+
+.escritura-page .errores-escritura input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.escritura-page .errores-escritura input:focus {
+    border: 2px solid #e65100;
+}
+
+/* Títulos */
+.escritura-page .escritura-title, 
+.escritura-page .escritura-subtitle {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    color: #ff4081;
+}
+
+/* Imagen */
+.escritura-page .imagen-escritura {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: auto;
+    animation: escrituraZoomIn 1s ease-in-out;
+}
+/* Título */
+.titulo-principal-T {
+    color: rgb(221, 76, 36);
+    font-family: 'Fredoka One', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.imagenes-container-l3 {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Alinea verticalmente si es necesario */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-top: 20px; /* Espacio desde el título */
+  }
+  
+  .imagen-amigo {
+    width: 200px; /* Ancho de cada imagen */
+    height: auto; /* Mantener proporción */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor apariencia */
+  }

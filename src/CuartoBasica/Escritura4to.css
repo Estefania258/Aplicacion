@@ -1,0 +1,235 @@
+/* Importar fuente amigable para niños */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Establecer box-sizing global */
+* {
+    box-sizing: border-box;
+}
+
+/* Animaciones */
+@keyframes escritura4toBounceInLeft {
+    0% { transform: translateX(-1000px); opacity: 0; }
+    60% { transform: translateX(30px); opacity: 1; }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes escritura4toZoomIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes escritura4toFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Aplicar los estilos solo dentro de la página de escritura */
+.escritura4to-page {
+    background: linear-gradient(120deg, #f8bbd0, #f48fb1);  /* Tonos de rosa suave */
+    font-family: 'Fredoka One', cursive;
+    padding: 20px;
+    font-size: 1rem;  /* Tamaño base */
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .escritura4to-page {
+        font-size: 0.9rem;
+    }
+}
+
+/* Contenedor principal */
+.escritura4to-page .p-6 {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: escritura4toZoomIn 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+/* Tarjetas */
+.escritura4to-page .lectura4to-card, 
+.escritura4to-page .evaluacion4to-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: escritura4toBounceInLeft 1s ease-out;
+    transition: transform 0.3s;
+    margin-bottom: 20px; /* Espaciado adicional entre tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto al pasar el ratón sobre las tarjetas */
+.escritura4to-page .lectura4to-card:hover, 
+.escritura4to-page .evaluacion4to-card:hover {
+    transform: scale(1.05);
+}
+
+/* Botón de imprimir */
+.imprimir4to-btn {
+    background: linear-gradient(90deg, #c862f0, #eaa7bd);  /* Colores rosa */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.imprimir4to-btn:hover {
+    background: linear-gradient(90deg,#651ee9, #d81b60);  /* Color de hover rosa */
+    transform: scale(1.1);
+}
+
+ .imprimir4to-btn:focus {
+    outline: 3px solid #d81b60;  /* Color rosa para el foco */
+}
+
+/* Botón de Finalizar */
+.finalizar4to-btn {
+    background: linear-gradient(90deg, #c862f0, #eaa7bd);  /* Colores rosa */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px; /* Espaciado adicional si es necesario */
+}
+
+.finalizar4to-btn:hover {
+    background: linear-gradient(90deg, #651ee9, #d81b60);  /* Color de hover rosa */
+    transform: scale(1.1);
+}
+
+.finalizar4to-btn:focus {
+    outline: 3px solid #d81b60;  /* Color rosa para el foco */
+}
+
+/* Evaluación */
+.escritura4to-page .evaluacion4to-opciones {
+    margin-top: 15px;
+    display: flex;  /* Para alinearlos de forma horizontal */
+    flex-wrap: wrap; /* Para permitir el ajuste de los elementos si el espacio es insuficiente */
+    gap: 20px; /* Espaciado entre los elementos */
+    justify-content: space-around; /* Distribuye el espacio de forma equitativa */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.escritura4to-page .evaluacion4to-opciones h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d81b60;  /* Color rosa para los títulos */
+}
+
+.escritura4to-page .evaluacion4to-opciones label {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 16px;
+    background: #f8bbd0;  /* Fondo rosa claro */
+    padding: 8px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.escritura4to-page .evaluacion4to-opciones label:hover {
+    background: #f48fb1;  /* Hover más oscuro */
+}
+
+.escritura4to-page .evaluacion4to-opciones input {
+    margin-right: 10px;
+    transform: scale(1.3);
+}
+
+/* Área de texto */
+.escritura4to-page .evaluacion4to-opciones textarea {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #f06292;  /* Borde rosa claro */
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.escritura4to-page .evaluacion4to-opciones textarea:focus {
+    border: 2px solid #d81b60;  /* Borde rosa oscuro al hacer foco */
+}
+
+/* Estilos de errores */
+.escritura4to-page .errores-escritura4to {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: #fce4ec;  /* Fondo rosa claro para errores */
+    border-radius: 10px;
+}
+
+.escritura4to-page .errores-escritura4to label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d81b60;  /* Texto rosa */
+}
+
+.escritura4to-page .errores-escritura4to input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #f8bbd0;  /* Borde rosa claro */
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.escritura4to-page .errores-escritura4to input:focus {
+    border: 2px solid #e91e63;  /* Borde rosa al hacer foco */
+}
+
+/* Títulos */
+.escritura4to-page .escritura4to-title, 
+.escritura4to-page .escritura4to-subtitle {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    color: #d81b60;  /* Títulos en rosa oscuro */
+}
+
+/* Imagen */
+.escritura4to-page .imagen-escritura4to {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: auto;
+    animation: escritura4toZoomIn 1s ease-in-out;
+}
+/* Título */
+.titulo-principal-E {
+    color: #433180;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Estilo para la imagen */
+.lectura-casamiento-imagen {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    animation: hornero-flotar 3s infinite alternate ease-in-out;
+}
